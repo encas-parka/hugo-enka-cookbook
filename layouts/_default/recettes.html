@@ -1,0 +1,240 @@
+
+{{ define "main" }}
+
+
+{{- if not hugo.IsProduction -}}
+<span class="no-print text-muted">{{ hugo.Environment }} |  Layout : layouts/_default/recettes.html </span>
+{{- end -}}
+
+{{/* Reccupération des donnée ingredient alergene */}}
+  {{ $alergene := slice }}
+  {{ $lactose := slice }}
+  {{ $gluten := slice }}
+  {{ $novegan := slice }}
+
+  {{- range $.Site.Data.ingredients -}}
+    {{- with .ingredients -}}
+    {{- range . -}}
+      {{ $ingredient := .title}}
+          {{- if eq .alergene true -}}
+            {{ $alergene = $alergene | append $ingredient }}
+          {{- end -}}
+          {{- if eq .sans_lactose false -}}
+            {{- $lactose = $lactose | append $ingredient -}}  
+          {{- end -}}        
+          {{- if eq .sans_gluten false -}}
+            {{ $gluten = $gluten | append $ingredient }}  
+          {{- end -}}        
+          {{- if eq .vegan false -}}
+            {{ $novegan = $novegan | append $ingredient }}  
+          {{- end -}}        
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  
+  {{ $ingredients := slice }}
+
+  {{- range $key, $value := .Params.ingredients  -}}
+    {{- with . -}}
+      {{- range $index, $element := . -}}
+       {{ $ingredients = $ingredients | append .title}}
+      {{- end }}
+    {{- end -}} {{/* with */}} 
+  {{- end -}} 
+
+  {{- $alergeneRecette := intersect $alergene $ingredients  -}}
+  {{- $glutenRecette := intersect $gluten $ingredients  -}}
+  {{- $lactoseRecette := intersect $lactose $ingredients  -}}
+  {{- $noveganRecette := intersect $novegan $ingredients  -}}
+  
+
+{{/*  */}}
+
+
+<h1>{{.Title}}</h1>
+{{- if .Params.auteur -}}
+<span class="text-muted fs-5">une recette de {{ .Params.auteur }}</span>
+{{- end -}}
+<div class="text-muted fs-6"> publiée le {{ dateFormat "02 January 2006" (.Params.publishDate)  }}</div>
+
+
+{{/* lien vers le CMS de la page */}}
+{{ $linkCMSPage := (path.Join "/admin/#/collections/recettes/entries/" (.Type) (.File.ContentBaseName)) }}
+<div class="text-end mx-2 px-2 no-print"><a target="_blank" rel="noopener noreferrer" href="{{$linkCMSPage}}/index" >Modifier</a></div>
+
+<div class="printonly fs-4 text-end fw-bolder">
+  Quantité pour <span id="quantityDefined"> {{.Params.plate}}</span> assiettes
+</div>
+
+<div class="row">
+  <div class="container">
+    <div class="m-2 p-2 fs-5 text-end">
+      {{ partial "content/badge-recette.html" . }}
+    </div>
+    <div class="m-2 p-2 text-end">
+      {{- if .Params.materiel -}}
+        <span class="fw-bold">Materiel: </span>
+        {{- range .Params.materiel -}}
+          <span class="badge bg-grey">{{ . }}</span>
+        {{- end -}}
+      {{- end -}}
+    </div>
+
+    <div class="">
+      <div class="no-print">
+        <span id="quantityInit" style="display:none">{{.Params.plate}}</span>
+        <form>
+          <div class="row">
+            <div class="col-lg-5">
+              <div class="input-group my-2">
+                <span class="input-group-text" for="amount">Nombre d'assietes à servir : </span>
+                <input type="number" class="form-control form-control-lg col-lg-3 col-md-2" id="quantityInput" name="quantityInput" value="{{.Params.plate}}" >
+              </div>
+                        </div>
+            </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col">
+          {{- if eq .Params.check "Oui" -}}
+            <span>Cette recette a été testée pour {{.Params.plate}} couverts </span>
+            {{- if ne .Params.checkfor "" -}}
+              <span>et pour {{.Params.checkfor}} couverts</span>
+            {{- end -}}
+          {{- else -}}
+            <div class="card p-4 my-3 fs-6 border-danger shadow">
+              <span class="card-text">Les auteur•ices de la recette ne l'ont <strong>pas testé</strong> pour le nombre de couverts indiqués par défaut ({{.Params.plate}}).<span class="no-print"> Merci de <a href="{{$linkCMSPage}}/index">modifier</a> la recette pour indiquer si vous l'avez testé avec succès, ou pour corriger les quantités d'ingrédients indiquées. A défaut, vous pouvez laisser vos commentaires dans le formulaire en bas de page</span></span>
+              {{- if .Params.checkfor -}}
+                <span class="card-text">Elle à été pour validée {{.checkfor}} personnes.</span>
+              {{- end -}}
+            </div>
+          {{- end -}}
+        </div>
+     
+        {{- with (or ( $alergeneRecette ) ( $glutenRecette) ( $lactoseRecette) ( $noveganRecette)) -}}
+        <div class="col">
+          <div class="card p-2 my-3 fs-6 border-danger shadow">
+            <div class="card-body">
+          {{- with $alergeneRecette -}}
+          <div> {{ partial "inline-svg" (dict "src" "fonticons/exclamation-triangle" "display" "inline" "rem" 2) }} Ingrédients alergenes :
+            {{ delimit $alergeneRecette ", "}}
+          </div>
+          {{- end -}}
+          {{- with $glutenRecette -}}
+          <div>{{ partial "inline-svg" (dict "src" "fonticons/gluten" "display" "inline" "rem" 2) }} 
+            Ingrédients contenant du gluten :
+            {{ delimit $glutenRecette ", "}}
+          </div>
+          {{- end -}}
+          {{- with $lactoseRecette -}}
+          <div>{{ partial "inline-svg" (dict "src" "fonticons/milk-box" "display" "inline" "rem" 2) }}
+            Ingrédients contenant du lactose :
+            {{ delimit $lactoseRecette ", "}}
+          </div>
+          {{- end -}}
+          {{- with $noveganRecette -}}
+          <div>{{ partial "inline-svg" (dict "src" "fonticons/no-vegan" "display" "inline" "rem" 2) }}            Ingrédients non-vegan :
+            {{ delimit $noveganRecette ", "}}
+          </div>
+          {{- end -}}
+        </div>
+          </div>
+        </div>
+        {{- end -}}
+      </div>
+    <hr>
+
+
+{{/*  INGREDIENTS  */}}
+<div class="row">
+  <div class="col-md-4 print-col-30-100">
+    <h4>Ingredients </h4>
+
+      {{/*  <div class="card my-4 p-2 shadow">
+        <span class="small">{{ partial "inline-svg" (dict "src" "fonticons/exclamation-triangle" "display" "inline" "rem" 1) }} → Alergènes </span>
+      </div>  */}}
+
+      {{- range $key, $value := .Params.ingredients  -}}
+        {{- with . -}}
+        <div class="card my-2 p-2 " outlined>
+          <div class="row">
+            <div class="col">
+              <span class="">{{ $key | strings.FirstUpper }} </span>
+              {{- range $index, $element := . -}}
+                {{ partial "components/ingredients" (dict "title" .title "quantite" .quantite "unit" .unit "alergene" $alergene  ) }}
+              {{end}}
+            </div>
+          </div>
+        </div>
+       {{- end -}} {{/* with */}} 
+      {{- end -}} {{/* range key value */}}
+  </div>
+
+
+{{/*  PREPARATION  */}}
+    <div class="col-md-8 print-col-70-100">
+      <h4>Préparation</h4>
+      <div class="card shadow-sm my-4 avoid-break-inside">
+        <div class="card-body">
+          <div class="m-auto">
+            {{- if .Params.preparation24h -}}
+            <div class="border border-danger mb-4">
+              <div class="p-3">
+                <div class="h5 mt-0">A prévoir à l'avance !</div>
+                <div>{{ .Params.preparation24h | markdownify }}</div>
+              </div>
+            </div>
+            {{- end -}}
+            {{.Params.preparation | markdownify}}
+          </div>
+        </div>
+      </div>
+      
+    {{- if .Params.astuces -}}
+    {{- range .Params.astuces -}}
+    <div class="card my-2  bg-light">
+      <div class="card-body small">
+        <div class="fw-bold">Astuce: </div>
+        <div>{{ .astuce }}</div>
+      </div>
+    </div>
+    {{- end -}}
+    {{- end -}}
+
+  </div>
+  </div>
+</div>
+
+<br><hr><br>
+<div class="no-print ">
+  <div class="small">Si vous avez des retour d'experience à partager sur cette recette. Vous pouvez précisions, autres quantités, </div>
+  {{ partial "components/giscus-comment" }}
+
+<script src="https://giscus.app/client.js"
+        data-repo="encas-parka/lesite"
+        data-repo-id="R_kgDOKdGong"
+        data-category="Polls"
+        data-category-id="DIC_kwDOKdGons4CZ74r"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="0"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="fr"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+</div>
+
+{{ end }}
+
+
+
+{{- define "layout-footer-script" -}}
+
+   {{ partial "footer/esbuild" (dict "src" "js/quantite.js" "load" "async" "transpile" false) -}}
+
+{{- end -}}

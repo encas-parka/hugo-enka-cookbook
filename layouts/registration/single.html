@@ -1,0 +1,109 @@
+{{ define "main" }}
+<div class="section mb-5 p-3">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col">
+        <div class="d-grid gap-3 col-8 mx-auto">
+          <img src="/enka-cookbook.png" alt="logo-enka">
+          <a href="/admin" target="_blank" class="btn btn-lg  btn-primary align-self-center">Se connecter</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-8 col p-5">
+        <div class="card">
+          <div class="card-header fs-5 fw-bold">La documentation</div>
+          <div class="card-body">
+            <div class="card-text">
+              <ul>
+                <li class="fw-bold"><a href="#" >  Publier des recettes, des évènements, etc. Le Guide... </a></li>
+                <li><a href="">Dupliquer ce site</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="row justify-content-evenly">
+  <div class="col-lg-5">
+    <div class="card">
+      <div class="card-header fw-bold">
+        Demander l'obtention d'un compte authentifié
+      </div>
+      <div class="card-body small">
+        <p class=" ">
+          Les comptes authentifiés peuvent directement publier ou modifier des
+          recettes, créer des évenements, etc, sans modération préalable. Le traitement des demandes se fait manuellement, et peut donc prendre un certain temps.
+        </p>
+        <p>Vous devrez disposer d'un compte github avec la même adresse e-mail</p>
+        <form
+          name="contact"
+          class="contact-form width-normal"
+          action="/contact-thank-you/"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="form-group">
+          <div class="hidden">
+            <label><input name="bot-field" /></label>
+          </div>
+            <!-- Text input-->
+            <label class="contact-form-1 control-label" for="Email"></label>
+            <div class="contact-form-1">
+              <input
+                id="contact-form-email"
+                name="Email"
+                type="email"
+                placeholder="Email"
+                class="form-control input-md"
+                required=""
+                autocomplete="off"
+                maxlength="100"
+              />
+            </div>
+            <!-- Textarea -->
+            <label class="control-label" for=""></label>
+            <textarea
+              class="form-control"
+              id="contact-form-message"
+              name="Message"
+              placeholder="Quelques mots de présentation (qui vous a parlé du site ? Vous faites partie d'une cantine autogéré ?)"
+              rows="5"
+            ></textarea>
+            <!-- Button -->
+            <button
+              class="btn btn-primary float-end mt-2"
+              type="submit"
+              value="Submit"
+              id="Form-submit"
+            >
+              Envoyer
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header fw-bold">Compte non authentifié</div>
+      <div class="card-body">
+        <div class="card-text small">
+          <p class="">Il est possible de proposer des modifications au site en quelques clic. Pour cela, il suffit d'avoir un d'un compte github (plateforme sur lequel est hebergé le site). Ensuite, la premiere fois que vous essayerez de vous connecter à enka-cookbook, vos identifiants github vous serons demandés, et si vous n'avez pas obtenu de compte authentifié sur enka-cookbook, il vous sera demander d'accepter de faire un "fork" du dépot. Vous serez ensuite redirigé vers la page d'édition du site. </p>
+          <p>Les modifications que vous proposerez devront être valider par le compte administrateur du site avant d'être publié sur le site.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="align-content-around">
+          <a href="https://github.com/signup" target="_blank" class="btn btn-info">S'inscrire sur github</a>
+          <a href="/admin" target="_blank" class="btn btn-success">Se connecter à enka-cookbook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{{ end }}

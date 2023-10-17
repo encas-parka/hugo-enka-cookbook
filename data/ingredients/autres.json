@@ -1,0 +1,84 @@
+{
+  "ingredients": [
+    {
+      "title": "Agar-agar"
+    },
+    {
+      "title": "Bicarbonate de soude"
+    },
+    {
+      "title": "Chapelure"
+    },
+    {
+      "title": "Citron confit",
+      "vegetarien": true
+    },
+    {
+      "title": "Colorants alimentaires en poudre"
+    },
+    {
+      "title": "Concentré de tomate"
+    },
+    {
+      "title": "Feuille de gélatine"
+    },
+    {
+      "title": "Feuilles de brick"
+    },
+    {
+      "title": "Feuilles de riz (galettes)",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Levure chimique"
+    },
+    {
+      "title": "Levure de boulanger"
+    },
+    {
+      "title": "Pain"
+    },
+    {
+      "title": "Pain de mie"
+    },
+    {
+      "title": "Pain pita"
+    },
+    {
+      "alergene": true,
+      "title": "Purée de sésame noir",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Tahin"
+    },
+    {
+      "title": "Tofu (fromage de soya)",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Tofu extra ferme  (fromage de soya)",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Tofu ferme (fromage de soya)",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Tofu lactofermenté",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Tofu mou / soyeux (fromage de soya)",
+      "vegan": true,
+      "vegetarien": true
+    }
+  ]
+}

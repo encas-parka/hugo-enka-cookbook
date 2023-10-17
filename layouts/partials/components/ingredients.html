@@ -1,0 +1,20 @@
+<div class="small">
+  {{ $ingredientName := .title }}
+
+  {{ if in  .alergene  .title }}
+    <span class="fw-bold">{{ .title }}</span>
+    {{/* TODO in-line-svg from module ? */}}
+    {{ partial "inline-svg" (dict 
+          "src" "fonticons/exclamation-triangle"
+          "display" "inline" 
+          "title" "Alergène"
+           ) }}
+  {{ else }}
+    <span class="fw-bold">{{- .title -}}</span>
+  {{ end }}
+
+  {{ if .quantite }}
+    : <span class="amount">{{- .quantite -}}</span>
+    <span class="unit"> {{- .unit -}}</span>
+  {{ end }}
+</div>

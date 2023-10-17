@@ -1,0 +1,804 @@
+{
+  "ingredients": [
+    {
+      "title": "Agneau",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Andouille (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Andouillette (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Anguille (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Bacon (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Bar (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Baudroie (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Bavette (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Biche (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Bifteck (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Bigorneaux (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Blanc de poulet (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Boudin blanc (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Boudin noir (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Bourguignon (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Brochet (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Bulot (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Cabillaud (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Caille (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Calamar (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Canard (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Carpe (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Carrelet (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Cerises griottes (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Cervelas (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Cervelle (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Chair à saucisse (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Charcuterie (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Chevreuil (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Chorizo (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Coeur (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Colin (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Collier (agneau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Collier (blanquette) (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Coppa (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Coque (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Côte (agneau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Côte (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Côte échine (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Côte première (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Côtelette (agneau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Côtelette (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Crabe (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Crevette (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Cuisse de dinde (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Cuisse de poulet (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Dindonneau (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Dorade (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "échine (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "églefin ou aiglefin (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Emincés de poulet (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Entrecôte (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "épaule (agneau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "épaule (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "épaule cuite dégraissée (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "éperlan (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Escalope (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Escalope de dinde (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Escalope de poulet (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Espadon (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Faisan (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Faux filet (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Filet (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Filet d'autruche (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Filet mignon (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Flanchet (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Flétan (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Foie (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Foie gras (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Gigot (agneau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Hampe grillée (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Hareng (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Homard (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Huïtre (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Jambon blanc (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Jambon cru (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Jambon de Bayonne (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Jambon de dinde (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Jambonneau (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Jarret (osso bucco) (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Jarret pot au feu (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Langouste (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Langoustine (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Langue de boeuf (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Langue de veau (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Lapin (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Lard (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Lardons (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Lieu (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Lièvre (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Limande (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Lotte (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Magret de canard fumé (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Maquereau (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Merlan (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Merlu (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Mortadelle (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Morue (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Moule (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Mulet (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Noix (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Noix de Saint-Jacques (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Oie (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Paleron, macreuse (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Palourde (fruits de mer)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Pancetta (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Pâté de campagne (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Pâté de foie (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Paupiette (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Pepperoni (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Perche (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Petit salé (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Pigeon (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Pintade (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Poitrine (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Poitrine (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Pot au feu (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Poule (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Poulet (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Poulet rôti (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Prosciutto (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Queue bouillie (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Raie (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rascasse (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rillettes d'oie (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rillettes de canard (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rillettes de porc (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rillettes de thon (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Ris (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rognon boeuf (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rognons de porc (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rosbif (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rosette (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rôti (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rôti (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rôti cuit (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rôti de dinde (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rôti Orloff (veau)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rouget (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Roussette (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Rumsteak (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Salami (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Sandre (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Sanglier (volaille et gibier)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Sardine (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Saucisse (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Saucisson (charcuterie)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Saumon (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Seiche (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Sole (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Steak haché (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Tête de veau (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Thon (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Travers (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Tripes (abats)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Truite (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Turbot (poisson)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Viande hachée (boeuf)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Viande hachée (porc)",
+      "vegan": false,
+      "vegetarien": false
+    },
+    {
+      "title": "Viande hachée (veau)",
+      "vegan": false,
+      "vegetarien": false
+    }
+  ]
+}

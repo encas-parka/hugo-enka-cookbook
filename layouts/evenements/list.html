@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<div class="row">
+  {{ range .RegularPages }}
+  
+  <div class="col-lg-4 col-md-6 p-3">
+    <div class="card recipe-card card-recette">
+      <div class="card-body py-0 mt-0">
+        <a href="{{ .RelPermalink }}" class="stretched-link"></a>
+        <h4 class="card--recipe-title">{{ .Title }}</h4>
+        {{ range .Params.repas }}
+        <div class="card-text small">
+          {{ range .recettes_du_repas }}
+          <span>
+            {{ .recette }} -
+          </span>
+          {{ end }}
+        </div>
+        {{/*  TODO First and last date (range first...)  */}}
+        
+        {{ end }}
+      </div>
+      
+    </div>
+  </div>
+  {{ end }}
+</div>
+
+{{ end }}

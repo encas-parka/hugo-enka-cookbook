@@ -1,0 +1,66 @@
+{{ define "main" }}
+
+
+{{ if not hugo.IsProduction }}
+<span class="no-print text-muted">{{ hugo.Environment }} | Layout : layouts/index.html </span>
+{{ end }}
+
+    
+<div class="" >
+  <div class="mb-5"><img src="/enka-cookbook.png" alt="logo-enka" width="256" class="mx-auto"></div>
+  <div class="search-wrapper p-4">
+      <div class="search-module m-4"> {{ partial "components/search-module" . }}</div>
+  </div>
+</div>
+
+<div class="section py-4">
+  <div class="row justify-content-center">
+    <div class="row">
+      {{ range (.Site.GetPage "section" "recettes").Pages}}
+      {{ partial "recettes-type-card" . }}
+      {{ end -}}
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-4 "><a href="/recettes" class=" btn btn-outline-danger btn-lg mb-4">Explorer parmis toutes les recettes</a></div>
+  </div>
+   
+</div>
+
+
+<div class="section my-4 py-4">
+    <div class="row">
+      <div class="col-lg-8">
+        <h5 class="text-center">catégories</h5>
+        <div class=" card p-3 gu-3 m-4">
+            <div class="row justify-content-evenly">
+            {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+                <div class="col-5 card card-recette my-3 text-center fw-bold border-1 ">
+                  <a href="categories/{{ $name | urlize }}" class="stretched-link"></a>
+                  {{ $name | humanize }} ({{$taxonomy.Count }})
+                </div>
+              {{end}}
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <h5 class="text-center">régimes alimentaires</h5>
+            <div class="card p-3 g-3 m-4">
+              {{ range $name, $taxonomy := .Site.Taxonomies.regime }}
+                <div class="card card-recette mb-3 text-center font-weight-bold border-1 ">
+                  <a href="/regime/{{ $name | urlize }}" class="stretched-link"></a>
+                  {{ $name | humanize }} ({{$taxonomy.Count }})
+                </div>
+              {{end}}
+            </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+{{end}}

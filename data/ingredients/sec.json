@@ -1,0 +1,161 @@
+{
+  "ingredients": [
+    {
+      "title": "Blé",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Boulgour",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Cacahuète",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Couscous de Mais-Riz",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Fêves",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Haricots blancs",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Haricots rouges",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Lasagnes",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Lentilles",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Lentilles vertes",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Maïs",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Noix",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Noix de macadamia",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Noix de pécan",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Nouilles chinoises",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Patates douces",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pâtes",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pâtes - langue d'oiseau",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Petits pois",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pignon de pin",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pois cassés",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pois chiches",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Polenta",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pommes de terre",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Quinoa",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Riz",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Riz rond",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Spaguetti de Mais-Riz",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Topinambour",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Vermicelle de Riz",
+      "vegan": true,
+      "vegetarien": true
+    }
+  ]
+}

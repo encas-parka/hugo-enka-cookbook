@@ -1,0 +1,146 @@
+<div x-data="searchInput">
+  <div :open="isOpen">
+    <input
+        type="text"
+        @input="getRecipes"
+        placeholder="Rechercher une recette..."
+        x-model="search"
+        class="form-control"
+        autofocus
+        id="qsearch"
+      />
+    
+    <template x-for="recipe in getRecipes" key:="recipe.url">
+     <a :href="recipe.url">
+       <div class="searchCard">
+         <div>
+           <div>
+             <span class="fs-5" :href="recipe.url" x-text="recipe.title"></span>
+               <span class="fs-6 text-muted ms-3" x-text="recipe.auteur"></span>
+           </div>
+           <div class="float-end mt-1">
+             <span class="badge bg-red" x-text="recipe.type"></span>
+             <template x-for="categorie in recipe.categories">
+               <span class="badge bg-green" x-text="categorie"></span>
+             </template>
+               <span>
+                 <template x-for="saison in recipe.saison">
+                  <span class="badge bg-pink" x-text="saison"></span>
+                 </template>
+               </span>
+             <template x-if="recipe.specialite != '' ">
+               <span class="badge bg-grey" x-text="recipe.specialite"> </span>
+             </template>
+           </div>
+         </div>
+        <div>
+           <template x-if="recipe.temperature === 'Chaud'">
+             <span class="badge bg-orange mx-0">Servir Chaud</span>
+           </template>
+           <template x-if="recipe.temperature === 'Froid'">
+             <span class="badge bg-blue">Servir Froid</span>
+           </template>
+           <template x-if="recipe.cuisson === 'Oui'">
+             <span class="badge bg-orange">Avec Cuisson</span>
+           </template>
+           <template x-if="recipe.cuisson === 'Non'">
+             <span  class="badge bg-blue">Sans Cuisson</span>
+           </template>
+           <template x-for="regime in recipe.regimes">
+             <span class="badge bg-grey me-1" x-text="regime"></span>
+           </template>
+         </div>
+         <template x-if="recipe.materiel != ''" >
+           <div>
+             <template x-for="materiel in recipe.materiel">
+               <span class="badge bg-grey me-1" x-text="materiel"></span>
+             </template>
+           </div>
+         </template>
+       </div>
+     </a>
+    </template>
+    </div>
+  </div>
+</div>
+{{/*  
+ */}}
+
+<script>
+{{/*  Auto focus on search input (for modal search module)  */}}
+  var searchModal = document.getElementById('searchBackdrop')
+  var searchModalInput = document.getElementById('qsearch')
+
+  searchModal.addEventListener('shown.bs.modal', function () {
+    searchModalInput.focus()
+  })
+</script>
+
+
+<script
+  defer
+  src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+></script>
+<script>
+  document.addEventListener('alpine:init', () => {
+      Alpine.data('searchInput', () => ({
+          isOpen: false,
+          search: "",
+
+          get getRecipes() {
+
+            if(this.search.length > 2) {
+              const filterRecipes = this.recipesData.filter((recipe) => {
+              return this.search.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').split(' ').every(
+              v => recipe.title.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(v) ||
+              recipe.auteur.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(v) ||
+              recipe.specialite.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(v))
+
+
+
+              })
+            
+              if(filterRecipes.length < this.recipesData.length && filterRecipes.length > 0 ) {
+
+                  this.isOpen = true
+                  return filterRecipes
+
+              } else {
+                this.isOpen = false
+              }
+            }
+          },
+
+          cleanSearch(e) {
+            alert(e.target.innerText)
+            this.search = ""
+          },
+          closeSearch() {
+            this.search = ""
+            this.isOpen = false
+          },
+
+          recipesData: [
+
+              {{- range(.Site.GetPage "section" "recettes").RegularPagesRecursive -}}
+
+              {
+              title: "{{ .Title }}",
+              url: "{{ .RelPermalink }}",
+              type: "{{ .Params.type }}",
+              auteur: "{{- .Params.auteur -}}",
+              specialite: "{{- .Params.spécialité -}}",
+              saison: [{{- range .Params.saison -}} "{{ . }}", {{- end -}} ],
+              categories: [ {{- range .Params.categories -}} "{{ . }}", {{- end -}}],
+              regimes: [ {{- if .Params.regime -}} {{- range sort .Params.regime -}} "{{ . }}", {{- end -}} {{- end -}} ],
+              temperature: "{{ .Params.temperature }}",
+              cuisson: "{{ .Params.cuisson }}",
+              materiel: [{{- range .Params.materiel -}}  "{{ . }}", {{- end -}}]
+              },
+
+              {{- end -}}
+              ]
+
+              }))
+          })
+</script>
