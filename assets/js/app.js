@@ -12,4 +12,3 @@ import 'lazysizes';
 // global alert
 // import './assets/js/alert';
 
-

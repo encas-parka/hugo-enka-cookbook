@@ -1,3 +1,6 @@
-module github.com/encas-parka/hugo-enka-cookbook
+module github.com/encas-parka/enka-cookbook
 
-go 1.21.2
+go 1.21.1
+
+
+

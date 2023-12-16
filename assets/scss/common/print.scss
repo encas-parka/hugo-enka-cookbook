@@ -8,6 +8,95 @@
 
 @media print {
 
+  // ::: Custom print classes
+
+  .no-print {
+      display: none
+    }
+
+  // Pour définir des colonnes pour l'impression (les annuler ou les creer)
+  .print-col-12 {
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .print-col-2 {
+    max-width: 50% !important;
+  }
+
+  .print-col-70-100 {
+    max-width: 70%;
+    padding: 0 0 0 5px
+  }
+
+  .print-col-30-100 {
+    max-width: 30%;
+    padding: 0 5px 0 0
+  }
+
+  .print-td-20 {
+    table-layout: fixed;
+    width: 20% !important ;
+  }
+
+  .print-td-15 {
+    table-layout: fixed;
+    width: 15% !important ;
+  }
+
+  .print-75p100 {
+    font-size: 75% !important;
+  }
+
+  // Font Size
+  .print-fs-small {
+    font-size: small !important;
+  }
+
+  .print-fs-smaller {
+    font-size: smaller !important;
+  }
+
+  .print-fs-medium {
+    font-size: medium !important;
+  }
+
+  .print-fs-large {
+    font-size: large !important;
+  }
+
+  .print-fs-4 {
+    font-size: 1.3em !important;
+  }
+
+  .print-bold {
+    font-weight: 600;
+  }
+
+  .print-enlarge {
+    border: 0;
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  .print-nocard{
+    border: 0;
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  // ::: OVERIDE
+  .content {
+    padding: 0 !important;
+
+  }
+
+
+  .card {
+    border-color: black !important;
+    box-shadow: none ! important
+  }
+
   head,
   header,
   header *,
@@ -38,6 +127,10 @@
 
   // }
 
+  table {
+    page-break-inside: avoid;
+    overflow: auto;
+  }
 
 
 
@@ -294,7 +387,7 @@
   h5,
   h6 {
     color: #000;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.2;
     margin-bottom: .75rem;
     margin-top: 0
@@ -486,8 +579,8 @@
   h4,
   h5,
   h6 {
-    page-break-after: avoid;
-    page-break-inside: avoid;
+    // page-break-after: avoid;
+    // page-break-inside: avoid;
     text-align: center;
   }
 
@@ -555,9 +648,6 @@
     page-break-inside: avoid
   }
 
-  .no-print {
-    display: none
-  }
 
   a.no-reformat:after {
     content: ''
@@ -583,6 +673,7 @@
 
   .container {
     min-width: 100% !important;
+    padding: 0 !important;
     // min-width: 992px !important;
   }
 
@@ -615,54 +706,55 @@
     border-color: #dee2e6;
   }
 
-  // Vuetify custom
+  
 
-  .v-data-table>.v-data-table__wrapper>table>tbody>tr>td,
-  .v-data-table>.v-data-table__wrapper>table>tfoot>tr>td,
-  .v-data-table>.v-data-table__wrapper>table>thead>tr>td,
-  .v-data-table--dense>.v-data-table__wrapper>table>tbody>tr>th,
-  .v-data-table--dense>.v-data-table__wrapper>table>tfoot>tr>th,
-  .v-data-table--dense>.v-data-table__wrapper>table>thead>tr>th {
-    font-size: .75rem !important;
-    height: 1cm !important;
-    border: 1px solid black;
-    padding: 2px, 12px !important;
-    line-height: 1.125;
+
+
+  .card {
+    border-color: black !important;
+    box-shadow: none ! important
   }
 
-  .v-application * {
-    box-shadow: none !important;
+ 
+
+
+  // Font Size
+  .print-fs-small {
+    font-size: small !important;
   }
 
-  // Pour définir des colonnes pour l'impression (les annuler ou les creer)
-  .print-col-12 {
-    min-width: 100% !important;
-    max-width: 100% !important;
+  .print-fs-smaller {
+    font-size: smaller !important;
   }
 
-  .print-col-70-100 {
-    max-width: 70%;
-    padding: 0 0 0 5px
+  .print-fs-medium {
+    font-size: medium !important;
+    }
+  
+  .print-fs-large {
+    font-size: large !important;
+    }
+
+  .print-fs-4 {
+    font-size: 1.3em !important;
+   }
+
+  .print-bold {
+    font-weight: 600;
   }
 
-  .print-col-30-100 {
-    max-width: 30%;
-    padding: 0 5px 0 0
+
+// Suppression des marges et pading
+
+  .content {
+    padding: 0 !important;
+
   }
 
-  .print-td-20 {
-    table-layout: fixed;
-    width: 20%;
+ .print-enlarge { 
+    border: 0;
+    margin: 0;
+    padding: 0;
   }
-
-  .print-td-15 {
-    table-layout: fixed;
-    width: 15%;
-  }
-
-  .print-75p100 {
-    font-size: 75% !important;
-  }
-
 
 }

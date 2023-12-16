@@ -28,7 +28,7 @@
                 name: 'poids'
                 widget: 'select'
                 options: ['Kg', 'grammes', 'unité']
-              - label: 'Alergène'
+              - label: 'Allergène'
                 name: 'alergene'
                 widget: 'boolean'
                 required: false
@@ -52,7 +52,7 @@
                 name: 'poids'
                 widget: 'select'
                 options: ['Kg', 'grammes', 'unité']
-              - label: 'Alergène'
+              - label: 'Allergène'
                 name: 'alergene'
                 widget: 'boolean'
                 required: false
@@ -94,7 +94,7 @@
                 name: 'poids'
                 widget: 'select'
                 options: ['Kg', 'grammes', 'litre', '']
-              - label: 'Alergène'
+              - label: 'Allergène'
                 name: 'alergene'
                 widget: 'boolean'
                 required: false                 
@@ -118,7 +118,7 @@
                 name: 'poids'
                 widget: 'select'
                 options: ['Kg', 'grammes', 'litre', '']
-              - label: 'Alergène'
+              - label: 'Allergène'
                 name: 'alergene'
                 widget: 'boolean'
                 required: false
