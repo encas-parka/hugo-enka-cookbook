@@ -1,8 +1,8 @@
-name = "Hugo-Hyas-Cookbook"
-license = "MIT"
-licenselink = "https://github.com/h-enk/hyas/blob/master/LICENSE"
-description = "Hugo theme for recipes based on Hyas (Hugo starter helping you build modern websites that are secure, fast, and SEO-ready — by default. (https://gethyas.com/ author: https://henkverlinde.com/) "
-homepage = "https://gethyas.com/"
+name = "hugo-enka-cookbook"
+license = "GNU General Public"
+licenselink = ""
+description = "Hugo theme for recipes based on Hyas "
+homepage = ""
 tags = ["landing page", "blog", "minimal", "modern", "customizable", "bootstrap", "recipe"]
 features = ["security aware", "fast by default", "seo-ready", "development tools", "bootstrap framework", "netlify-ready", "netlify-cms"]
 min_version = "0.75.0"
