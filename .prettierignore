@@ -1,0 +1,5 @@
+# ignore node modules and config files
+/public/**
+/ressource/**
+/node_modules/**
+  

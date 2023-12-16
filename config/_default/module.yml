@@ -1,0 +1,24 @@
+mounts:
+  - source: node_modules/@hyas/core/assets
+    target: assets
+  - source: node_modules/@hyas/core/layouts
+    target: layouts
+  - source: node_modules/gethyas/assets
+    target: assets
+  - source: node_modules/gethyas/static
+    target: static
+  - source: node_modules/bootstrap/scss
+    target: assets/scss/bootstrap
+  - source: node_modules/@hyas/bootstrap/layouts
+    target: layouts
+  - source: node_modules/flatpickr/dist
+    target: static/flatpickr
+  - source: assets
+    target: assets
+  - source: layouts
+    target: layouts
+  - source: static
+    target: static
+
+
+  

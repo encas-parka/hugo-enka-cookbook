@@ -1,0 +1,36 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+    ],
+    "globals": {
+       "Atomics": "readonly",
+       "SharedArrayBuffer": "readonly"
+     },
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "vue"
+    ],
+     "rules": {
+        "comma-dangle": "off",
+        "class-methods-use-this": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/prefer-default-export": "off",
+        "vue/component-name-in-template-casing": ["error", "kebab-case", {
+          "ignores": []
+        }],
+    "prettier/prettier": ["error", { "singleQuote": true, "endOfLine": "auto" }]
+    },
+}
