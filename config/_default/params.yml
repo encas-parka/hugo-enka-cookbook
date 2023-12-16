@@ -5,11 +5,11 @@ description: Site collaboratif de partage de recettes et d'organisation d'évèn
 images:
   - enka-cookbook.png
 ogLocale: fr
-titleHome: Encas-Parka Cookbook
+titleHome: Enka-Parka Cookbook
 schemaType: Organization
 schemaName: Enka Cookbook
 schemaAuthor: encas-parka
-schemaAuthorGitHub: https://github.com/encas-parka
+schemaAuthorGitHub: https://github.com/hugo-enka-cookbook
 schemaLocale: fr-FR
 schemaLogo: logo-enka.png
 schemaLogoWidth: 512
