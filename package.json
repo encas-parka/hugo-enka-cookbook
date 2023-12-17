@@ -1,13 +1,13 @@
 {
-  "name": "hugo-enka-cookbook",
+  "name": "@qaldek/hugo-enka-cookbook",
   "version": "0.8.0",
   "author": "QaldeK",
-  "description":  "Hugo theme for cookbook site"
-  "license": "GNU-GPL3",
+  "description": "Hugo theme for cookbook site",
+  "license": "GPL-3.0-or-later",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/encas-parka/hugo-enka-cookbook.git"
-},
+    "type": "git",
+    "url": "git+https://github.com/encas-parka/hugo-enka-cookbook.git"
+  },
   "scripts": {
     "dev": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache",
     "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --buildDrafts",
@@ -40,5 +40,15 @@
     "decap-server": "^3.0.1",
     "prettier": "2.8.8",
     "prettier-plugin-go-template": "0.0.13"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/encas-parka/hugo-enka-cookbook/issues"
+  },
+  "homepage": "https://github.com/encas-parka/hugo-enka-cookbook#readme",
+  "main": "index.js",
+  "keywords": [
+    "hugo-theme",
+    "SSG",
+    "cookbook-site"
+  ]
 }
