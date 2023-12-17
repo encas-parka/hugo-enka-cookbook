@@ -1,12 +1,11 @@
 name = "hugo-enka-cookbook"
 license = "GNU General Public"
-licenselink = ""
-description = "Hugo theme for recipes based on Hyas "
-homepage = ""
-tags = ["landing page", "blog", "minimal", "modern", "customizable", "bootstrap", "recipe"]
-features = ["security aware", "fast by default", "seo-ready", "development tools", "bootstrap framework", "netlify-ready", "netlify-cms"]
-min_version = "0.75.0"
+licenselink = "https://www.gnu.org/licenses/gpl-3.0.html"
+description = "Hugo theme for recipes based on Hyas theme"
+homepage = "https://github.com/encas-parka/hugo-enka-cookbook"
+tags = ["modern", "bootstrap", "cookbook", "vuejs" ]
+features = ["seo-ready", "development tools", "bootstrap framework", "netlify-ready", "decap-cms"]
 
 [author]
   name = "QaldeK"
-  homepage = ""
+

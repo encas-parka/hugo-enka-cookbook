@@ -1,8 +1,13 @@
 {
-  "name": "enka-cookbook",
-  "version": "0.0.1",
+  "name": "hugo-enka-cookbook",
+  "version": "0.8.0",
   "author": "QaldeK",
-  "license": "MIT",
+  "description":  "Hugo theme for cookbook site"
+  "license": "GNU-GPL3",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/encas-parka/hugo-enka-cookbook.git"
+},
   "scripts": {
     "dev": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache",
     "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --buildDrafts",
@@ -33,7 +38,7 @@
   },
   "devDependencies": {
     "decap-server": "^3.0.1",
-    "prettier": "^2.8.8",
+    "prettier": "2.8.8",
     "prettier-plugin-go-template": "0.0.13"
   }
 }
