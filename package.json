@@ -57,7 +57,7 @@
   },
 
   "devDependencies": {
-    "auto-changelog": "^2.4.0",
+    "auto-changelog": "^2.4.0"
   },
 
   "otherDependencies": {
