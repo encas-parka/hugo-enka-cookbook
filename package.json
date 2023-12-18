@@ -65,6 +65,11 @@
     "prettier": "2.8.8",
     "prettier-plugin-go-template": "0.0.13"
   },
+  
+  },
+  "otherDependencies": {
+    "hugo": "0.119.0"
+  },
 
   "bugs": {
     "url": "https://github.com/encas-parka/hugo-enka-cookbook/issues"
