@@ -3,7 +3,7 @@ titleSeparator: '-'
 titleAddition: Des recettes pour pleins
 description: Site collaboratif de partage de recettes et d'organisation d'évènement pour les cantines autogérées.
 images:
-  - enka-cookbook.png
+  - cover.png
 ogLocale: fr
 titleHome: Enka-Parka Cookbook
 schemaType: Organization
