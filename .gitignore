@@ -4,6 +4,7 @@ resources
 .netlify
 .hugo_build.lock
 .vscode
+.vscodium
 .frontmatter
 .directories
 bak_part
