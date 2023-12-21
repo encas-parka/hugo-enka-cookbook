@@ -12,7 +12,13 @@ mounts:
   - source: node_modules/@hyas/bootstrap/layouts
     target: layouts
   - source: node_modules/flatpickr/dist
-    target: static/flatpickr
+    target: assets/flatpickr
+  - source: node_modules/vuetify/dist/vuetify.min.js
+    target: assets/js/vendor/vuetify.min.js
+  - source: node_modules/vuetify/dist/vuetify.min.css
+    target: assets/css/vendor/vuetify.min.css
+  - source: node_modules/netlify-identity-widget/build/netlify-identity-widget.js
+    target: assets/js/vendor/netlify-identity-widget.js
   - source: assets
     target: assets
   - source: layouts

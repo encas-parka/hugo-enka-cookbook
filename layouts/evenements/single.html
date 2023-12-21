@@ -1,7 +1,17 @@
 {{ define "main" }}
 
-<script src="{{ .Site.BaseURL }}/flatpickr/flatpickr.js"></script>
-<link rel="stylesheet" href="{{ "flatpickr/flatpickr.css" | relURL }}">
+<script  src="{{ .Site.BaseURL }}flatpickr/flatpickr.min.js"></script>
+
+{{ $cssfp := resources.Get "flatpickr/flatpickr.min.css"  }}
+{{ if hugo.IsProduction }}
+  {{ $cssfp = $cssfp | fingerprint | resources.PostProcess }}
+{{end}}
+{{/*  <link rel="stylesheet" href="{{ .Site.BaseURL }}flatpickr/flatpickr.min.css">  */}}
+<link rel="stylesheet" 
+   href="{{$cssfp.RelPermalink}}"   
+   {{ if hugo.IsProduction -}} 
+   integrity="{{ $cssfp.Data.Integrity }}"
+   {{- end }}>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"> 
 
 

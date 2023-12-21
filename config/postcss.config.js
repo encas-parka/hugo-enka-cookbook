@@ -1,5 +1,13 @@
 const autoprefixer = require('autoprefixer');
-const purgecss = require('@fullhuman/postcss-purgecss');
+const purgecss = require("@fullhuman/postcss-purgecss")({
+  content: ["./hugo_stats.json"],
+  defaultExtractor: (content) => {
+    const els = JSON.parse(content).htmlElements;
+    return [...(els.tags || []), ...(els.classes || []), ...(els.ids || [])];
+  },
+  safelist: [],
+});
+
 const whitelister = require('purgecss-whitelister');
 // const cssbyebye = require('css-byebye');
 
@@ -28,8 +36,8 @@ module.exports = {
           // './assets/scss/components/_buttons.scss',
           //'./assets/scss/components/_code.scss', //// enlevé avec v.2.03
           // './assets/scss/components/_syntax.scss',
-          './node_modules/@hyas/core/assets/scss/app.scss',
-          './node_modules/vuetify/dist/vuetify.min.css',
+          // './node_modules/@hyas/core/assets/scss/app.scss',
+          // './node_modules/vuetify/dist/vuetify.min.css',
         ]),
       ],
     }),

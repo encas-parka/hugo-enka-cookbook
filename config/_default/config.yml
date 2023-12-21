@@ -82,3 +82,7 @@ markup:
     lineNumbersInTable: true
     tabWidth: 4
     style: monokai
+
+# This tells Hugo to write a hugo_stats.json file to the project root as part of the build. It includes all tags, classes, and ids from your *.html templates.
+build:
+  writeStats: true
