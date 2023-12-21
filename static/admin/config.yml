@@ -1,11 +1,12 @@
 backend:
-  ## prod →
-  name: github
-  repo: encas-parka/enka-cookbook
-  branch: deployed
-  # branch: master # Branch to update (optional; defaults to master)
+  name: git-gateway
+  # name: github
+  # repo: 
+  # branch: main
   open_authoring: true #Permettre un PR sur github sans l'acces aux dépot
-  squash_merges: true  #XXX : Vérifier si ca marche bien : si un article est modifier plusieur avant d'etre mergé/publié, un seul commit avec rebased.
+  squash_merges: true  # Vérifier si ca marche bien : si un article est modifier plusieur fpos avant d'etre mergé/publié, un seul commit avec rebased.
+
+# site_url: 
 
 # when using the default proxy server port
 # for local cms developpement.
@@ -19,7 +20,6 @@ publish_mode: editorial_workflow
 
 media_folder: "static/images"
 public_folder: "/images"
-site_url: https://enka-cookbook.netlify.app/
 
 slug:
   clean_accents: true
