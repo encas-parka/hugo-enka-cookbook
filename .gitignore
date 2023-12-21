@@ -7,6 +7,7 @@ resources
 .vscodium
 .frontmatter
 .directories
+.directory
 bak_part
 *.bak*
 *-bak*
@@ -15,5 +16,5 @@ bak_part
 *USELESS*
 frontmatter.json
 go.mod
-.directory
+.*
 

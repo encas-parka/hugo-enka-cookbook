@@ -1,20 +1,20 @@
-title: Enka-Cookbook
+title: Cookbook
 titleSeparator: '-'
 titleAddition: Des recettes pour pleins
 description: Site collaboratif de partage de recettes et d'organisation d'évènement pour les cantines autogérées.
 images:
   - cover.png
 ogLocale: fr
-titleHome: Enka-Parka Cookbook
+titleHome: Cookbook
 schemaType: Organization
-schemaName: Enka Cookbook
+schemaName: Cookbook
 schemaAuthor: encas-parka
-schemaAuthorGitHub: https://github.com/hugo-enka-cookbook
+schemaAuthorGitHub: https://github.com/encas-parka
 schemaLocale: fr-FR
-schemaLogo: logo-enka.png
+schemaLogo: logo.png
 schemaLogoWidth: 512
 schemaLogoHeight: 512
-schemaImage: enka-cookbook.png
+schemaImage: cover.png
 schemaImageWidth: 1280
 schemaImageHeight: 640
 schemaTwitter: ""
@@ -36,10 +36,17 @@ portraitPhotoWidths:
   - 500
 lqipWidth: 20x
 smallLimit: "320"
-defaultImage: default-image.png
+defaultImage: cover.png
 fillImage: 1280x720 Center
 footer: Powered by <a href="https://www.netlify.com/">Netlify</a>, <a href="https://gohugo.io/">Hugo</a>, and <a href="https://gethyas.com/">Hyas</a>
 copyRight: ""
 alert: false
 alertDismissable: true
 alertText: Deliver web projects 10x faster. <a class="alert-link" href="https://www.netlify.com/whitepaper/" target="_blank" rel="noopener">Get the free enterprise paper →</a>
+seo:
+  - title:
+    separator: " | "
+    suffix: "Cookbook"
+  - favicons:
+    icon: "favicon.png"
+    svgIcon: "favicon.svg"

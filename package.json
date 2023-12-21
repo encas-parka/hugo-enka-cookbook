@@ -9,6 +9,9 @@
     "url": "https://github.com/encas-parka/hugo-enka-cookbook.git"
   },
   "scripts": {
+    "dev": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache",
+    "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --buildDrafts",
+    
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "npm run clean:build && npm run clean:lint && npm run clean:install",
     "clean:build": "shx rm -rf public resources .hugo_build.lock",
