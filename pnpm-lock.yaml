@@ -4,7 +4,7 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-devDependencies:
+dependencies:
   '@hyas/bootstrap':
     specifier: ^1.0.4
     version: 1.0.4
@@ -14,6 +14,11 @@ devDependencies:
   '@hyas/seo':
     specifier: ^2.1.0
     version: 2.1.0
+  flatpickr:
+    specifier: ^4.6.13
+    version: 4.6.13
+
+devDependencies:
   auto-changelog:
     specifier: ^2.4.0
     version: 2.4.0
@@ -1387,7 +1392,7 @@ packages:
     dependencies:
       '@popperjs/core': 2.11.8
       bootstrap: 5.3.2(@popperjs/core@2.11.8)
-    dev: true
+    dev: false
 
   /@hyas/core@1.0.2:
     resolution: {integrity: sha512-tU1Lw4iZ/qdTLrvHTO447cTDUdU8xTyP2QpKgU0uRY18EyaIsZWN6w1v+Z2PDY8OGL8uboYFRBuMww+TFylunA==}
@@ -1397,12 +1402,12 @@ packages:
   /@hyas/images@2.0.3:
     resolution: {integrity: sha512-4LqRiOZDQ3h0qyNBCRqfBD3yKwsVWmhPe0/JGuxtn6Kpr7GdTOBKNcfKunR8MATIBI15/Zulil9bYsFnCGr8Cw==}
     engines: {node: '>=16.12.0'}
-    dev: true
+    dev: false
 
   /@hyas/seo@2.1.0:
     resolution: {integrity: sha512-yeXZuK1IUXd5xbD683lYqdLl0PVafArWYHoZmqKTYBl7I7ewDYWIzU020Nzf0D447RxwzOoC76SVVmlnY6qGGQ==}
     engines: {node: '>=16.12.0'}
-    dev: true
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
@@ -1475,7 +1480,7 @@ packages:
 
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
-    dev: true
+    dev: false
 
   /@sindresorhus/is@5.6.0:
     resolution: {integrity: sha512-TV7t8GKYaJWsn00tFDqBw8+Uqmr8A0fRU1tvTQhyZzGv0sJCGRQL3JGMI3ucuKo3XIZdUP+Lx7/gh2t3lewy7g==}
@@ -1673,7 +1678,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.22.2
-      caniuse-lite: 1.0.30001570
+      caniuse-lite: 1.0.30001571
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1775,7 +1780,7 @@ packages:
       '@popperjs/core': ^2.11.8
     dependencies:
       '@popperjs/core': 2.11.8
-    dev: true
+    dev: false
 
   /brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -1802,7 +1807,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001570
+      caniuse-lite: 1.0.30001571
       electron-to-chromium: 1.4.615
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
@@ -1890,8 +1895,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /caniuse-lite@1.0.30001570:
-    resolution: {integrity: sha512-+3e0ASu4sw1SWaoCtvPeyXp+5PsjigkSt8OXZbF9StH5pQWbxEjLAZE3n8Aup5udop1uRiKA7a4utUk/uoSpUw==}
+  /caniuse-lite@1.0.30001571:
+    resolution: {integrity: sha512-tYq/6MoXhdezDLFZuCO/TKboTzuQ/xR5cFdgXPfDtM7/kchBO3b4VWghE/OAi/DV7tTdhmLjZiZBZi1fA/GheQ==}
     dev: true
 
   /chalk@2.4.2:
@@ -2661,6 +2666,10 @@ packages:
       keyv: 4.5.4
       rimraf: 3.0.2
     dev: true
+
+  /flatpickr@4.6.13:
+    resolution: {integrity: sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw==}
+    dev: false
 
   /flatted@3.2.9:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}

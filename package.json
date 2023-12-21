@@ -1,6 +1,6 @@
 {
   "name": "@qaldek/hugo-enka-cookbook",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "author": "QaldeK",
   "description": "Hugo theme for cookbook site",
   "license": "GPL-3.0-or-later",
@@ -19,16 +19,16 @@
     "info": "npm list"
   },
 
-"dependencies": {
-  "flatpickr": "^4.6.13"
+  "dependencies": {    
+    "@hyas/bootstrap": "^1.0.4",
+    "@hyas/images": "^2.0.3",
+    "@hyas/seo": "^2.1.0",
+    "flatpickr": "^4.6.13"
   },
 
   "devDependencies": {
     "auto-changelog": "^2.4.0",
     "gethyas": "^2.2.2",
-    "@hyas/bootstrap": "^1.0.4",
-    "@hyas/images": "^2.0.3",
-    "@hyas/seo": "^2.1.0",
     "decap-server": "^3.0.1",
     "prettier": "2.8.8",
     "prettier-plugin-go-template": "0.0.13"
