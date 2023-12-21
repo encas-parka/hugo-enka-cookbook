@@ -1,6 +1,6 @@
 {
   "name": "@qaldek/hugo-enka-cookbook",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "author": "QaldeK",
   "description": "Hugo theme for cookbook site",
   "license": "GPL-3.0-or-later",
@@ -19,6 +19,9 @@
     "info": "npm list"
   },
 
+"dependencies": {
+  "flatpickr": "^4.6.13",
+  },
 
   "devDependencies": {
     "auto-changelog": "^2.4.0",
