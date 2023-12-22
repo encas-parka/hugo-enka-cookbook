@@ -1,5 +1,6 @@
 {{ if eq .Kind "404" -}}
   <meta name="robots" content="noindex, follow">
+  {{/*  TODO ajouter evenement + ingredients  */}}
 {{ else -}}
   {{ with .Params.robots -}}
     <meta name="robots" content="{{ . }}">
