@@ -1,0 +1,90 @@
+baseurl: /
+title: Cookbook Demo
+relativeURLs: true
+canonifyURLs: false
+disableAliases: true
+disableHugoGeneratorInject: false # default false 
+removePathAccents: true
+enableEmoji: true
+enableGitInfo: false
+enableRobotsTXT: true
+languageCode: fr-FR
+defaultContentLanguage: fr
+defaultContentLang: fr
+paginate: 24
+rssLimit: 10
+pygmentsUseClasses: true
+pygmentsCodefences: true
+outputs:
+  home:
+    - HTML
+    - REDIRECTS
+    - HEADERS
+mediaTypes:
+  application/json:
+    suffixes:
+      - json
+  text/netlify:
+    suffixes:
+      - ""
+    delimiter: ""
+outputFormats:
+  JSON:
+    mediaType: application/json
+    baseName: index
+    isPlainText: true
+    notAlternative: true
+  REDIRECTS:
+    mediatype: text/netlify
+    baseName: _redirects
+    isPlainText: true
+    notAlternative: true
+  HEADERS:
+    mediatype: text/netlify
+    baseName: _headers
+    isPlainText: true
+    notAlternative: true
+caches:
+  getjson:
+    dir: :cacheDir/:project
+    maxAge: 10s
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
+taxonomies:
+  category: categories
+  regime: regime
+  auteur: auteur
+  region: region
+permalinks:
+  blog: /:title/
+
+minify:
+  tdewolff:
+    html:
+      keepWhitespace: false
+  minifyOutput: true
+related:
+  threshold: 80
+  includeNewer: true
+  toLower: false
+  indices:
+    - name: categories
+      weight: 100
+    - name: date
+      weight: 10
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    tabWidth: 4
+    style: monokai
+
+# This tells Hugo to write a hugo_stats.json file to the project root as part of the build. It includes all tags, classes, and ids from your *.html templates.
+build:
+  writeStats: true

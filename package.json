@@ -1,21 +1,24 @@
 {
-  "name": "@qaldek/hugo-enka-cookbook",
-  "version": "0.8.8",
   "author": "QaldeK",
-  "description": "Hugo theme for cookbook site",
-  "license": "GPL-3.0-or-later",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/encas-parka/hugo-enka-cookbook.git"
+  "bugs": {
+    "url": "https://github.com/encas-parka/hugo-enka-cookbook/issues"
   },
-  "scripts": {
-    "dev": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache",
-    "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --buildDrafts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "npm run clean:build && npm run clean:lint && npm run clean:install",
-    "clean:build": "shx rm -rf public resources .hugo_build.lock",
-    "clean:install": "shx rm -rf node_modules package-lock.json yarn.lock pnpm-lock.yaml",
-    "info": "npm list"
+  "comments": {
+    "dependencies": {
+      "@hyas/bootstrap": "project",
+      "@hyas/images": "project",
+      "@hyas/seo": "project",
+      "flatpickr": "project",
+      "netlify-identity-widget": "project",
+      "vuetify": "project"
+    },
+    "devDependencies": {
+      "auto-changelog": "project",
+      "decap-server": "project",
+      "gethyas": "project",
+      "prettier": "project",
+      "prettier-plugin-go-template": "project"
+    }
   },
   "dependencies": {
     "@hyas/bootstrap": "^1.0.4",
@@ -25,6 +28,7 @@
     "netlify-identity-widget": "^1.9.2",
     "vuetify": "^2.7.1"
   },
+  "description": "Hugo theme for cookbook site",
   "devDependencies": {
     "auto-changelog": "^2.4.0",
     "decap-server": "^3.0.1",
@@ -32,17 +36,31 @@
     "prettier": "2.8.8",
     "prettier-plugin-go-template": "0.0.13"
   },
-  "engines": {
-    "node": ">=16.12.0",
-    "pnpm": ">=8.6.2"
-  },
-  "bugs": {
-    "url": "https://github.com/encas-parka/hugo-enka-cookbook/issues"
-  },
   "homepage": "https://github.com/encas-parka/hugo-enka-cookbook#readme",
   "keywords": [
     "hugo-theme",
     "SSG",
     "cookbook-site"
-  ]
+  ],
+  "license": "GPL-3.0-or-later",
+  "name": "@qaldek/hugo-enka-cookbook",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/encas-parka/hugo-enka-cookbook.git"
+  },
+  "scripts": {
+    "build": "exec-bin node_modules/.bin/hugo/hugo --minify ",
+    "clean": "npm run clean:build && npm run clean:lint && npm run clean:install",
+    "clean:build": "shx rm -rf public resources .hugo_build.lock",
+    "clean:install": "shx rm -rf node_modules package-lock.json yarn.lock pnpm-lock.yaml",
+    "demosite": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --enableGitInfo",
+    "dev": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache",
+    "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --buildDrafts",
+    "info": "npm list",
+    "postinfo": "exec-bin node_modules/.bin/hugo/hugo version",
+    "postinstall": "shx rm -rf node_modules/.bin/hugo && shx mkdir node_modules/.bin/hugo && shx cp node_modules/gethyas/node_modules/.bin/hugo/* node_modules/.bin/hugo",
+    "preinfo": "npm version",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.8.8"
 }

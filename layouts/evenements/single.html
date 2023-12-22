@@ -1,17 +1,6 @@
 {{ define "main" }}
 
-<script  src="{{ .Site.BaseURL }}flatpickr/flatpickr.min.js"></script>
 
-{{ $cssfp := resources.Get "flatpickr/flatpickr.min.css"  }}
-{{ if hugo.IsProduction }}
-  {{ $cssfp = $cssfp | fingerprint | resources.PostProcess }}
-{{end}}
-{{/*  <link rel="stylesheet" href="{{ .Site.BaseURL }}flatpickr/flatpickr.min.css">  */}}
-<link rel="stylesheet" 
-   href="{{$cssfp.RelPermalink}}"   
-   {{ if hugo.IsProduction -}} 
-   integrity="{{ $cssfp.Data.Integrity }}"
-   {{- end }}>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"> 
 
 
@@ -896,11 +885,11 @@
               
               <tr v-if="item.qTotalX"  :class="{'table-secondary': showAllColIngredients}">
                 <td>[[item.ingredient]]</td>
-                <td class="small">([[item.totalAssiettes]] couverts - [[item.totalRecettes]] plats)</td>
+                <td class="small">[[item.totalAssiettes]] couverts - [[item.totalRecettes]] plats</td>
               
                 <td class="text-end">
                   <template v-for="(quantite, index) in item.qTotalX" >
-                    <span v-if="quantite.unit !== ''">[[round2Decimals(quantite.qTotal)]] [[quantite.unit]]</span>
+                    <span v-if="quantite.unit !== ''"> [[round2Decimals(quantite.qTotal)]] [[quantite.unit]] </span>
                     <span v-else class="small">... [[item.totalRecettes]] plats </span>
                     <span v-if="index !== item.qTotalX.length - 1"> + </span>
                   </template>
@@ -925,9 +914,28 @@
 </div>
 </div> 
 
+{{/*  Import de flatpiker, utilisé seulement sur cette page  */}}
+
+{{ $jsfp := resources.Get "flatpickr/flatpickr.min.js" }}
+{{ $jsfp_fr := resources.Get "flatpickr/l10n/fr.js" }}
+
+{{ $cssfp := resources.Get "flatpickr/flatpickr.min.css"  }}
+{{ if hugo.IsProduction }}
+  {{ $cssfp = $cssfp | fingerprint | postCSS }}
+  {{ $jsfp = $jsfp | fingerprint }}
+{{end}}
+<link rel="stylesheet" 
+   href="{{$cssfp.RelPermalink}}"   
+   {{ if hugo.IsProduction -}} 
+    integrity="{{ $cssfp.Data.Integrity }}"
+   {{- end }}
+>
+<script src="{{$jsfp.RelPermalink}}"></script>
+<script src="{{$jsfp_fr.RelPermalink}}"></script>
 
 
 <script nonce="6GwL6l4yhLQddbSv2ftKfX9sTqEkpYcmwyUPm5LEdgqF6VP27IUA5SLae8ScqZ171xC7gGVVZAOuYPJnsiUAzPadx4yFkdQ7GNHa" type="module">
+  flatpickr.localize(flatpickr.l10ns.fr);
   {{/*  :::VUEAPP  */}}
   const app = new Vue ({
     delimiters: ['[[', ']]'],

@@ -22,7 +22,8 @@
     {{ partial "footer/footer.html" . }}
     {{ partial "footer/script-footer.html" . }}
     {{ block "layout-footer-script" . }} {{end -}} 
-    {{/* For specific layout script 
+    
+    {{/* For specific layout script (→ in layout-footer-script)
     USAGE: Insert at the end of the layout page:
 
     {{ define "page-script"}}
@@ -51,5 +52,6 @@
       {{ partial "footer/esbuild" (dict "src" "js/script.js" "load" "async" "transpile" false) -}}
     {{end}}
     */}}
+
   </body>
 </html> 

@@ -11,7 +11,7 @@ mounts:
     target: assets/scss/bootstrap
   - source: node_modules/@hyas/bootstrap/layouts
     target: layouts
-  - source: node_modules/flatpickr/dist
+  - source: node_modules/flatpickr/dist/
     target: assets/flatpickr
   - source: node_modules/vuetify/dist/vuetify.min.js
     target: assets/js/vendor/vuetify.min.js
