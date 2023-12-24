@@ -25,7 +25,8 @@ mounts:
     target: layouts
   - source: static
     target: static
-
+  - source: Example Site/content
+    target: content
 
 
   
