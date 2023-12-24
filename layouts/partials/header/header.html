@@ -55,13 +55,18 @@
 
         <ul class="navbar-nav">
           <li class="nav-item small mx-4">
-            <a href="/evenements" class="nav-link">Evenements</a>
+            <a 
+              href="" 
+              class="nav-link"
+              data-bs-toggle="modal"
+              data-bs-target="#search-events-modal"
+              >
+              Les Evenements</a>
           </li>
           <li class="nav-item">
             <a 
-              onclick="input.focus()" 
               class="btn btn-outline-primary btn-sm mx-2" data-bs-toggle="modal"
-              data-bs-target="#searchBackdrop">
+              data-bs-target="#search-recipes-modal">
               {{ partial "inline-svg" (dict "src" "fonticons/search.svg" "display" "block" "fs" 4) }}
             </a>
           </li>
@@ -83,19 +88,28 @@
 <div class="navbar mx-lg-4">{{ partial "components/breadcrumb.html" . }}</div>
 {{ end }}
 
-
-
-<div class="modal fade" id="searchBackdrop" data-toggle="modal"  tabindex="0" aria-labelledby="Search" aria-hidden="true">
+<div class="modal fade" id="search-recipes-modal" data-toggle="modal"  tabindex="0" aria-labelledby="Search Recipes" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg">
     <div class="modal-content ">
       <div class="modal-header py-2">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
       </div>
       <div class="modal-body">
-            {{ partial "components/search-module" . }}
+        {{ partial "components/search-module-recipes" . }}
       </div>
-  
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="search-events-modal" data-toggle="modal"  tabindex="0" aria-labelledby="Search Events" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content ">
+      <div class="modal-header py-2">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{ partial "components/search-module-events" . }}
+      </div>
     </div>
   </div>
 </div>
