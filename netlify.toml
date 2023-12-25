@@ -10,7 +10,7 @@
   GO_VERSION = "1.21.1" # Added for hugo-module compatibility. See go.mod file
 
 [context.production]
-  command = "npm run build:demo"
+  command = "npm run demo"
 
 [context.deploy-preview]
   command = "npm run build -- -b $DEPLOY_PRIME_URL"
