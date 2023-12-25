@@ -9,12 +9,14 @@
 <div class="" >
   <div class="mb-5"><img src="/cover.png" alt="" width="256" class="mx-auto"></div>
   <h1 class="text-center">{{.Site.Title}}</h1>
-  <div class="search-wrapper p-4">
-      <div class="search-module m-4"> {{ partial "components/search-module-recipes" . }}</div>
+  <div class="section py-4">
+    <div class="search-wrapper p-4">
+        <div class="search-module m-4"> {{ partial "components/search-module-recipes" . }}</div>
+    </div>
   </div>
 </div>
 
-<div class="section py-4">
+<div class="section py-4 my-4">
   <div class="row justify-content-center">
     <div class="row">
       {{ range (.Site.GetPage "section" "recettes").Pages}}
