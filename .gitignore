@@ -18,3 +18,4 @@ frontmatter.json
 go.mod
 .*
 
+.directory
