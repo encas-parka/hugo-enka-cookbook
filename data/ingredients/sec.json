@@ -1,7 +1,21 @@
 {
   "ingredients": [
     {
+      "title": "Amande",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Amandes effilées",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "vegetarien": true
+    },
+
+    {
       "title": "Blé",
+      "alergenesIng": ["Gluten"],
       "vegan": true,
       "vegetarien": true
     },
@@ -14,7 +28,8 @@
       "alergene": true,
       "title": "Cacahuète",
       "vegan": true,
-      "vegetarien": true
+      "vegetarien": true,
+      "alergenesIng": ["Arachide"]
     },
     {
       "title": "Couscous de Mais-Riz",
@@ -39,7 +54,8 @@
     {
       "title": "Lasagnes",
       "vegan": true,
-      "vegetarien": true
+      "vegetarien": true,
+      "alergenesIng": ["Gluten"]
     },
     {
       "title": "Lentilles",
@@ -57,20 +73,35 @@
       "vegetarien": true
     },
     {
+      "title": "Noisette",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Noix de cajou",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
       "alergene": true,
       "title": "Noix",
       "vegan": true,
-      "vegetarien": true
+      "vegetarien": true,
+      "alergenesIng": ["Fruit à coque"]
     },
     {
       "title": "Noix de macadamia",
       "vegan": true,
-      "vegetarien": true
+      "vegetarien": true,
+      "alergenesIng": ["Fruit à coque"]
     },
     {
       "title": "Noix de pécan",
       "vegan": true,
-      "vegetarien": true
+      "vegetarien": true,
+      "alergenesIng": ["Fruit à coque"]
     },
     {
       "title": "Nouilles chinoises",
@@ -85,20 +116,19 @@
     {
       "title": "Pâtes",
       "vegan": true,
-      "vegetarien": true
+      "vegetarien": true,
+      "alergenesIng": ["Gluten"]
     },
     {
       "title": "Pâtes - langue d'oiseau",
+      "alergenesIng": ["Gluten"],
       "vegan": true,
       "vegetarien": true
     },
-    {
-      "title": "Petits pois",
-      "vegan": true,
-      "vegetarien": true
-    },
+
     {
       "title": "Pignon de pin",
+      "alergenesIng": ["Fruit à coque"],
       "vegan": true,
       "vegetarien": true
     },
@@ -113,15 +143,11 @@
       "vegetarien": true
     },
     {
-      "title": "Polenta",
+      "title": "Polenta (semoule de maïs)",
       "vegan": true,
       "vegetarien": true
     },
-    {
-      "title": "Pommes de terre",
-      "vegan": true,
-      "vegetarien": true
-    },
+
     {
       "title": "Quinoa",
       "vegan": true,
@@ -138,7 +164,30 @@
       "vegetarien": true
     },
     {
-      "title": "Semoule",
+      "title": "Semoule grosse (blé)",
+      "alergenesIng": ["Gluten"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule moyenne (blé)",
+      "alergenesIng": ["Gluten"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule fine (blé)",
+      "alergenesIng": ["Gluten"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule de manioc",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule de riz",
       "vegan": true,
       "vegetarien": true
     },

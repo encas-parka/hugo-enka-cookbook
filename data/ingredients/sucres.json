@@ -1,6 +1,18 @@
 {
   "ingredients": [
     {
+      "title": "sucre de canne (blond)",
+      "vegetarien": true,
+      "vegan": true,
+      "sans-lactose": true
+    },
+    {
+      "title": "Figues Sèches",
+      "vegan": true,
+      "vegetarien": true,
+      "sans-lactose": true
+    },
+    {
       "title": "Cassonade"
     },
     {
@@ -122,6 +134,30 @@
     },
     {
       "title": "Sucre vanillé"
+    },
+    {
+      "title": "Crème glacée",
+      "vegetarien": true,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
+    },
+    {
+      "title": "Crème glacée chocolat",
+      "vegetarien": true,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
+    },
+    {
+      "title": "Crème glacée fraise",
+      "vegetarien": true,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
+    },
+    {
+      "title": "Crème glacée vanille",
+      "vegetarien": true,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     }
   ]
 }

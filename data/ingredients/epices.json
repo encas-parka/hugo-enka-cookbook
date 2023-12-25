@@ -123,18 +123,22 @@
     {
       "title": "Mayonnaise",
       "vegan": true,
-      "vegetarien": true
+      "vegetarien": true,
+      "alergenesIng": ["Oeuf", "Moutarde"]
     },
     {
       "title": "Menthe",
       "vegan": true,
       "vegetarien": true
     },
+
     {
       "title": "Moutarde",
       "vegan": true,
+      "alergenesIng": ["Moutarde"],
       "vegetarien": true
     },
+
     {
       "title": "Muscade",
       "vegan": true,
@@ -183,6 +187,7 @@
     {
       "alergene": true,
       "title": "Ras el hanout",
+      "alergenesIng": ["Moutarde"],
       "vegan": true,
       "vegetarien": true
     },
@@ -198,6 +203,7 @@
     },
     {
       "title": "Sauce soja",
+      "alergenesIng": ["Soja"],
       "vegan": true,
       "vegetarien": true
     },
@@ -214,6 +220,28 @@
     {
       "alergene": true,
       "title": "Sésame doré",
+      "alergenesIng": ["Sésame"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Sésame blanc",
+      "alergenesIng": ["Sésame"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Sésame brun",
+      "alergenesIng": ["Sésame"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Sésame noir",
+      "alergenesIng": ["Sésame"],
       "vegan": true,
       "vegetarien": true
     },
@@ -224,7 +252,8 @@
     },
     {
       "alergene": true,
-      "title": "Vinaigre balsamique"
+      "title": "Vinaigre balsamique",
+      "alergenesIng": ["Sulfites"]
     },
     {
       "title": "Vinaigrette",

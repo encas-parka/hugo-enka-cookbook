@@ -1,70 +1,99 @@
 {
   "ingredients": [
     {
+      "title": "Yaourt de soja",
+      "vegetarien": true,
+      "vegan": true,
+      "alergenesIng": ["Soja"],
+      "pFrais": true
+    },
+    {
       "title": "Babybel",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Beurre demi-sel",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Beurre doux",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Bleu",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Brie-Beaufort",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Bûche de chèvre",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Camembert",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Cantal",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Cheddar",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Comté",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Crème Chantilly",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Crème d'amande",
@@ -74,60 +103,57 @@
     {
       "title": "Crème épaisse",
       "vegetarien": true,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
-    {
-      "title": "Crème glacée",
-      "vegetarien": true
-    },
-    {
-      "title": "Crème glacée chocolat",
-      "vegetarien": true
-    },
-    {
-      "title": "Crème glacée fraise",
-      "vegetarien": true
-    },
-    {
-      "title": "Crème glacée vanille",
-      "vegetarien": true
-    },
+
     {
       "title": "Crème liquide",
       "vegetarien": true,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"]
     },
     {
       "title": "Crème Végétale",
       "vegan": true,
-      "vegetarien": true
+      "vegetarien": true,
+      "alergenesIng": ["Soja"]
     },
     {
       "title": "Edam",
-      "vegetarien": true
+      "vegetarien": true,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Emmental",
       "vegetarien": true,
-      "sans_lactose": false
+      "sans_lactose": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
-      "title": "Farine d'avoine"
+      "title": "Farine d'avoine",
+      "alergenesIng": ["Gluten"]
     },
     {
-      "title": "Farine d'épeautre"
+      "title": "Farine d'épeautre",
+      "alergenesIng": ["Gluten"]
     },
     {
-      "title": "Farine d'orge"
+      "title": "Farine d'orge",
+      "alergenesIng": ["Gluten"]
     },
     {
       "title": "Farine d’amarante"
     },
     {
-      "title": "Farine de blé"
+      "title": "Farine de blé",
+      "alergenesIng": ["Gluten"]
     },
     {
-      "title": "Farine de blé noir"
+      "title": "Farine de blé noir (sarrasin)"
     },
     {
       "title": "Farine de châtaigne"
@@ -136,7 +162,8 @@
       "title": "Farine de coco"
     },
     {
-      "title": "Farine de kamut"
+      "title": "Farine de kamut",
+      "alergenesIng": ["Gluten"]
     },
     {
       "title": "Farine de lentilles"
@@ -154,10 +181,12 @@
       "title": "Farine de quinoa"
     },
     {
-      "title": "Farine de seigle"
+      "title": "Farine de seigle",
+      "alergenesIng": ["Gluten"]
     },
     {
-      "title": "Farine de soja"
+      "title": "Farine de soja",
+      "alergenesIng": ["Soja"]
     },
     {
       "title": "Farine de tapioca"
@@ -169,55 +198,73 @@
       "title": "Feta",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Fourme d'Ambert",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Fromage à raclette",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Fromage blanc",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Fromage de chèvre frais",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Fromage frais",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Fromage râpé",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Gouda",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "Gruyère",
       "vegetarien": true,
       "sans_lactose": false,
-      "vegan": false
+      "vegan": false,
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true
     },
     {
       "title": "huile d'olive",
@@ -246,11 +293,13 @@
     },
     {
       "title": "huile de noisette",
+      "alergenesIng": ["Fruit à coque"],
       "vegan": true,
       "vegetarien": true
     },
     {
       "title": "huile de noix",
+      "alergenesIng": ["Fruit à coque"],
       "vegan": true,
       "vegetarien": true
     },
@@ -267,6 +316,7 @@
     {
       "title": "huile de sésame",
       "vegan": true,
+      "alergenesIng": ["Sésame"],
       "vegetarien": true
     },
     {
@@ -276,9 +326,6 @@
     },
     {
       "title": "lait (chèvres)"
-    },
-    {
-      "title": "lait (vache)"    
     },
     {
       "title": "Lait concentré sucré",
@@ -300,128 +347,179 @@
       "title": "lait de noisette"
     },
     {
-      "title": "lait de soja"
+      "title": "lait de soja",
+      "alergenesIng": ["Soja"],
+      "vegetarien": true,
+      "sans_lactose": true,
+      "vegan": true
     },
     {
       "title": "Lait demi-écrémé",
+      "alergenesIng": ["Produit laitier"],
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Lait écrémé",
+      "alergenesIng": ["Produit laitier"],
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Lait entier",
+      "alergenesIng": ["Produit laitier"],
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Leerdammer",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Livarot",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "sans_lactose": false,
-      "vegetarien": true
+      "vegetarien": true,
+      "vegan": false
     },
     {
       "title": "Maroilles",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Mascarpone",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Mozzarella",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Munster",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
-      "alergene": true,
+      "alergenesIng": ["Oeuf"],
       "title": "Oeuf",
       "vegetarien": true,
       "vegan": false
-
     },
     {
       "title": "Oeuf d'autruche",
+      "alergenesIng": ["Oeuf"],
       "vegetarien": true,
       "vegan": false
     },
     {
       "title": "Oeuf d'oie",
+      "alergenesIng": ["Oeuf"],
       "vegetarien": true,
       "vegan": false
     },
     {
       "title": "Oeuf de caille",
+      "alergenesIng": ["Oeuf"],
       "vegetarien": true,
       "vegan": false
     },
     {
       "title": "Oeuf de cane",
+      "alergenesIng": ["Oeuf"],
       "vegetarien": true,
       "vegan": false
     },
     {
       "title": "Parmesan",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "vegan": false,
       "sans_lactose": false
-
     },
     {
       "title": "Philadelphia",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "sans_lactose": false,
       "vegetarien": true
     },
     {
       "title": "Reblochon",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Roquefort",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Saint-Paulin",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Yaourt nature",
+      "alergenesIng": ["Produit laitier"],
+      "pFrais": true,
       "vegetarien": true,
       "sans_lactose": false,
       "vegan": false
     },
     {
       "title": "Yaourt Végétal",
+      "alergenesIng": [],
       "vegan": true,
+      "vegetarien": true,
+      "pFrais": true
+    },
+    {
+      "title": "Yaourt d'Amande",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "pFrais": true,
       "vegetarien": true
+    },
+    {
+      "title": "Yaourt de Soja",
+      "alergenesIng": ["Soja"],
+      "vegan": true,
+      "vegetarien": true,
+      "pFrais": true
     }
+    
   ]
 }
