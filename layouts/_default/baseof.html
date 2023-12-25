@@ -11,7 +11,7 @@
 
 {{/* ... */}}
 
-    {{ block "layout-header-script" .}} {{end -}}    
+    {{/*  {{ block "layout-header-script" .}} {{end -}}      */}}
     {{ partial "header/header.html" . }}
     <div class="wrap container" role="document">
       <div class="content">
@@ -21,7 +21,7 @@
     {{ block "sidebar-footer" . }}{{ end }}
     {{ partial "footer/footer.html" . }}
     {{ partial "footer/script-footer.html" . }}
-    {{ block "layout-footer-script" . }} {{end -}} 
+    {{/*  {{ block "layout-footer-script" . }} {{end -}}   */}}
     
     {{/* For specific layout script (→ in layout-footer-script)
     USAGE: Insert at the end of the layout page:
