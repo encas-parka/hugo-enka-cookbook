@@ -10,6 +10,21 @@
 
   // ::: Custom print classes
 
+
+// Suppression des marges et pading
+
+  .content {
+    padding: 0 !important;
+
+  }
+
+  // .print-enlarge {
+  //   border: 0;
+  //   margin: 0 !important;
+  //   padding: 0;
+  // }
+
+
   .no-print {
       display: none
     }
@@ -73,23 +88,12 @@
     font-weight: 600;
   }
 
-  .print-enlarge {
-    border: 0;
-    margin: 0 !important;
-    padding: 0;
-  }
-
   .print-nocard{
     border: 0;
     margin: 0 !important;
     padding: 0;
   }
 
-  // ::: OVERIDE
-  .content {
-    padding: 0 !important;
-
-  }
 
 
   .card {
@@ -744,17 +748,6 @@
   }
 
 
-// Suppression des marges et pading
 
-  .content {
-    padding: 0 !important;
-
-  }
-
- .print-enlarge { 
-    border: 0;
-    margin: 0;
-    padding: 0;
-  }
 
 }
