@@ -290,6 +290,8 @@
 {{- end -}}
 {{- end -}}
 
+<a href="#" class="scroll-to-top" title="Scroll to top"></a>
+
 
 {{/* ::: _LES RECETTES   */}}
 <div id="recettesSection" :class="{'no-print' : !toPrint.recettesSection}">
@@ -492,9 +494,9 @@
       {{/*  alert noprint  */}}
         <div class="row justify-content-start mt-2 ">
 
-       <hr class="my-1 no-print">
+       {{/*  <hr class="my-1 no-print">  */}}
         {{ if $alertQuantite }}
-        <div class="col-12 col-md-6 col-lg-6 col-xl-6 print-col-2 ">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-6 print-col-2 my-3">
           <div class="card border-danger shadow small px-4 card-body print-nocard">
             {{ if not $checkYes }}
             <div> {{ partial "inline-svg" (dict "src" "fonticons/exclamation-circle" "display" "inline" "fs" 4) }}
@@ -508,7 +510,7 @@
 
       
         {{- with (or ( $alertAutresAllergenes ) ( $alertGluten) ( $alertLait) ( $alertPorc)) -}}
-        <div class="col-12 col-md-6 col-lg-6 col-xl-6 print-col-2">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-6 print-col-2 my-3">
           <div class="card border-danger shadow small px-4 card-body print-nocard">
             {{- with $alertAutresAllergenes -}}
             <div> {{ partial "inline-svg" (dict "src" "fonticons/exclamation-triangle" "display" "inline" "fs" 3) }}
