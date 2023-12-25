@@ -1,0 +1,4 @@
+# This config dir is for test demo site. The changing is in module.yml, with the import of "Example Site" as /content.
+# For test demo site, in root project, do `npm run demosite`
+
+{}
