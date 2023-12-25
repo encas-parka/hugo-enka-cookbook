@@ -1,0 +1,264 @@
+{
+  "ingredients": [
+    {
+      "title": "Aneth aromatique",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Anis étoilé",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Basilic",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Bouquet garni",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Canelle",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Cardamome",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Cerfeuil",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Ciboulette",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Citronelle",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Clou de girofle",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Coriandre",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Coulis de tomates",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Cumin",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Curcuma",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Curry",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Estragon",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Feuille de laurier",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Fleur de sel",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Genévrier",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Gingembre en poudre",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Gros sel",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Guacamole",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Herbes de Provence",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Ketchup",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Mayonnaise",
+      "vegan": true,
+      "vegetarien": true,
+      "alergenesIng": ["Oeuf", "Moutarde"]
+    },
+    {
+      "title": "Menthe",
+      "vegan": true,
+      "vegetarien": true
+    },
+
+    {
+      "title": "Moutarde",
+      "vegan": true,
+      "alergenesIng": ["Moutarde"],
+      "vegetarien": true
+    },
+
+    {
+      "title": "Muscade",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Origan",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Paprika",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pavot",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Persil",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pesto",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Piment (autre)",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Piment d'espelette",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Poivre",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Ras el hanout",
+      "alergenesIng": ["Moutarde"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Romarin",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Safran",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Sauce soja",
+      "alergenesIng": ["Soja"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Sauge",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Sel",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Sésame doré",
+      "alergenesIng": ["Sésame"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Sésame blanc",
+      "alergenesIng": ["Sésame"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Sésame brun",
+      "alergenesIng": ["Sésame"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Sésame noir",
+      "alergenesIng": ["Sésame"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Thym",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Vinaigre balsamique",
+      "alergenesIng": ["Sulfites"]
+    },
+    {
+      "title": "Vinaigrette",
+      "vegan": true,
+      "vegetarien": true
+    }
+  ]
+}

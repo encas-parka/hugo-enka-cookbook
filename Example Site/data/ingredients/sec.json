@@ -1,0 +1,210 @@
+{
+  "ingredients": [
+    {
+      "title": "Amande",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Amandes effilées",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "vegetarien": true
+    },
+
+    {
+      "title": "Blé",
+      "alergenesIng": ["Gluten"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Boulgour",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Cacahuète",
+      "vegan": true,
+      "vegetarien": true,
+      "alergenesIng": ["Arachide"]
+    },
+    {
+      "title": "Couscous de Mais-Riz",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Fêves",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Haricots blancs",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Haricots rouges",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Lasagnes",
+      "vegan": true,
+      "vegetarien": true,
+      "alergenesIng": ["Gluten"]
+    },
+    {
+      "title": "Lentilles",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Lentilles vertes",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Maïs",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Noisette",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Noix de cajou",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergene": true,
+      "title": "Noix",
+      "vegan": true,
+      "vegetarien": true,
+      "alergenesIng": ["Fruit à coque"]
+    },
+    {
+      "title": "Noix de macadamia",
+      "vegan": true,
+      "vegetarien": true,
+      "alergenesIng": ["Fruit à coque"]
+    },
+    {
+      "title": "Noix de pécan",
+      "vegan": true,
+      "vegetarien": true,
+      "alergenesIng": ["Fruit à coque"]
+    },
+    {
+      "title": "Nouilles chinoises",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Patates douces",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pâtes",
+      "vegan": true,
+      "vegetarien": true,
+      "alergenesIng": ["Gluten"]
+    },
+    {
+      "title": "Pâtes - langue d'oiseau",
+      "alergenesIng": ["Gluten"],
+      "vegan": true,
+      "vegetarien": true
+    },
+
+    {
+      "title": "Pignon de pin",
+      "alergenesIng": ["Fruit à coque"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pois cassés",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Pois chiches",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Polenta (semoule de maïs)",
+      "vegan": true,
+      "vegetarien": true
+    },
+
+    {
+      "title": "Quinoa",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Riz",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Riz rond",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule grosse (blé)",
+      "alergenesIng": ["Gluten"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule moyenne (blé)",
+      "alergenesIng": ["Gluten"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule fine (blé)",
+      "alergenesIng": ["Gluten"],
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule de manioc",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Semoule de riz",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Spaguetti de Mais-Riz",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Topinambour",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Vermicelle de Riz",
+      "vegan": true,
+      "vegetarien": true
+    }
+  ]
+}

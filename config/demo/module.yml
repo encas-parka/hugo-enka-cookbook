@@ -19,14 +19,16 @@ mounts:
     target: assets/css/vendor/vuetify.min.css
   - source: node_modules/netlify-identity-widget/build/netlify-identity-widget.js
     target: assets/js/vendor/netlify-identity-widget.js
+
+# pour qu'ils ne soient pas écrasé ?
   - source: assets
     target: assets
   - source: layouts
     target: layouts
   - source: static
     target: static
+
+# demo content
   - source: Example Site/content
     target: content
 
-
-  

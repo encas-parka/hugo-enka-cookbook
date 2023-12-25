@@ -1,0 +1,138 @@
+{
+  "ingredients": [
+    {
+      "title": "Gomme de xanthane",
+      "vegetarien": true,
+      "vegan": true,
+      "sans-lactose": true
+    },
+    {
+      "title": "Agar-agar"
+    },
+    {
+      "title": "Bicarbonate de soude"
+    },
+    {
+      "title": "Chapelure",
+      "alergenesIng": [
+        "Gluten"
+      ]
+    },
+    {
+      "title": "Citron confit",
+      "vegetarien": true
+    },
+    {
+      "title": "Colorants alimentaires en poudre"
+    },
+    {
+      "title": "Concentré de tomate"
+    },
+    {
+      "title": "Feuille de gélatine"
+    },
+    {
+      "title": "Feuilles de brick",
+      "alergenesIng": [
+        "Gluten"
+      ]
+    },
+    {
+      "title": "Feuilles de riz (galettes)",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "title": "Levure chimique",
+      "alergenesIng": [
+        "Gluten"
+      ]
+    },
+    {
+      "title": "Levure de boulanger"
+    },
+    {
+      "title": "Pain",
+      "alergenesIng": [
+        "Gluten"
+      ]
+    },
+    {
+      "title": "Pain de mie",
+      "alergenesIng": [
+        "Gluten"
+      ]
+    },
+    {
+      "title": "Pain pita",
+      "alergenesIng": [
+        "Gluten"
+      ]
+    },
+    {
+      "alergenesIng": [
+        "Sésame"
+      ],
+      "title": "Purée de sésame noir",
+      "vegan": true,
+      "vegetarien": true
+    },
+    {
+      "alergenesIng": [
+        "Sésame"
+      ],
+      "title": "Tahin"
+    },
+    {
+      "alergenesIng": [
+        "Soja"
+      ],
+      "title": "Tofu (fromage de soya)",
+      "vegan": true,
+      "vegetarien": true,
+      "pFrais": true
+    },
+    {
+      "alergenesIng": [
+        "Soja"
+      ],
+      "title": "Tofu extra ferme  (fromage de soya)",
+      "vegan": true,
+      "vegetarien": true,
+      "pFrais": true
+    },
+    {
+      "alergenesIng": [
+        "Soja"
+      ],
+      "title": "Tofu ferme (fromage de soya)",
+      "vegan": true,
+      "vegetarien": true,
+      "pFrais": true
+    },
+    {
+      "title": "Tofu lactofermenté",
+      "alergenesIng": [
+        "Soja"
+      ],
+      "vegan": true,
+      "vegetarien": true,
+      "pFrais": true
+    },
+    {
+      "title": "Vin Rouge"
+    },
+    {
+      "title": "Vin Blanc"
+    },
+    {
+      "title": "Tofu mou / soyeux (fromage de soya)",
+      "alergenesIng": [
+        "Soja"
+      ],
+      "vegan": true,
+      "vegetarien": true,
+      "pFrais": true
+    }
+  ]
+}
