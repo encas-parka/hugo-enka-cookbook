@@ -1,26 +1,32 @@
+
 mounts:
-  - source: node_modules/@hyas/core/assets
-    target: assets
-  - source: node_modules/@hyas/core/layouts
-    target: layouts
-  - source: node_modules/gethyas/assets
-    target: assets
-  - source: node_modules/gethyas/static
-    target: static
+# bootstrap
   - source: node_modules/bootstrap/scss
     target: assets/scss/bootstrap
-  - source: node_modules/@hyas/bootstrap/layouts
-    target: layouts
+  - source: node_modules/bootstrap/dist/js/bootstrap.bundle.js
+    target: assets/js/bootstrap.js
+
+# flatpickr
   - source: node_modules/flatpickr/dist/
     target: assets/flatpickr
-  - source: node_modules/vuetify/dist/vuetify.min.js
-    target: assets/js/vendor/vuetify.min.js
+
+# vuejs2
+  - source: node_modules/vue/dist/vue.min.js
+    target: assets/js/vendor/vue.min.js  
+  - source: node_modules/vue/dist/vue.js
+    target: assets/js/vendor/vue.js
+
+# vuetify
+  - source: node_modules/vuetify/dist/vuetify.js
+    target: assets/js/vendor/vuetify.js
   - source: node_modules/vuetify/dist/vuetify.min.css
     target: assets/css/vendor/vuetify.min.css
+
+# netlify-identity-widget
   - source: node_modules/netlify-identity-widget/build/netlify-identity-widget.js
     target: assets/js/vendor/netlify-identity-widget.js
 
-# pour qu'ils ne soient pas écrasé ?
+# local : pour prédominance des fichier locaux
   - source: assets
     target: assets
   - source: layouts
@@ -28,7 +34,8 @@ mounts:
   - source: static
     target: static
 
-# demo content
-  - source: Example Site/content
+# exampleSite
+  - source: exampleSite/content
     target: content
 
+  

@@ -1,4 +1,7 @@
-# :::DOC: 
+{{/*  
+  DOCUMENTATION :
+  Prepare les fichier scss en css (de assets à static). Est utilisé par layouts/partials/head/stylesheet.html qui envoie /scss/app.scss (qui lui-même concatène un ensemble de fichiers scss )
+*/}}
 
 {{ $css := "" }}
 {{ if eq (hugo.Environment) "development" -}}

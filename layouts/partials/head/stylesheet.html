@@ -1,19 +1,18 @@
+{{/*  Récupération du stylesheet après traitement du scss en css  */}}
 {{ partial "head/libsass" "scss/app.scss"}}
+
 
 {{ $cssvuetify := resources.Get "css/vendor/vuetify.min.css" }}
 
 {{- if eq .Type "recettes" -}}
   
   {{ if hugo.IsProduction }}
-    {{ $cssvuetify = $cssvuetify  | resources.Fingerprint "sha512" | resources.PostProcess}}
-  {{end}}
+    {{ $cssvuetify = $cssvuetify  | resources.Fingerprint "sha512" | postCSS}}
+    <link rel="stylesheet" href="{{ $cssvuetify.Permalink | relURL }}" integrity="{{ $cssvuetify.Data.Integrity }}" crossorigin="anonymous">
 
-  <link rel="stylesheet" 
-    href="{{$cssvuetify.RelPermalink}}"   
-    {{ if hugo.IsProduction -}} 
-    integrity="{{ $cssvuetify.Data.Integrity }}"
-    {{- end }}>
-  {{/*  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">  */}}
+  {{else}}
+    <link rel="stylesheet" href="{{ $cssvuetify.Permalink | relURL }}">
+  {{end}}
 
 {{end}}
 

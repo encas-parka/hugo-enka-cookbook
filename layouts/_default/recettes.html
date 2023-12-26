@@ -61,99 +61,101 @@
 
 
 <h1>{{.Title}}</h1>
-{{- if .Params.auteur -}}
-<span class="text-muted fs-5">une recette de {{ .Params.auteur }}</span>
-{{- end -}}
-<div class="text-muted fs-6 no-print"> publiée le {{ dateFormat "02 January 2006" (.Params.publishDate)  }}</div>
 
-
-{{/* lien vers le CMS de la page */}}
-{{ $linkCMSPage := (path.Join "/admin/#/collections/recettes/entries/" (.Type) (.File.ContentBaseName)) }}
-<div class="text-end mx-2 px-2 no-print"><a target="_blank" rel="noopener noreferrer" href="{{$linkCMSPage}}/index" >Modifier</a></div>
-
-<div class="printonly fs-6 text-end fw-bolder">
-  Quantité pour <span id="quantityDefined"> {{.Params.plate}}</span> couvert
-</div>
-
-<div class="row">
-  <div class="container">
-    <div class="m-2 p-2 fs-5 text-end">
-      {{ partial "content/badge-recette.html" . }}
-    </div>
-    <div class="m-2 p-2 text-end">
-      {{- if .Params.materiel -}}
-        <span class="fw-bold">Materiel: </span>
-        {{- range .Params.materiel -}}
-          <span class="badge bg-grey">{{ . }}</span>
-        {{- end -}}
+<div class="row ">
+      <div class="text-muted fs-6 no-print"> publiée le {{ dateFormat "02 January 2006" (.Params.publishDate)  }}</div>
+      <div class="col-md-6 ">
+      {{- if .Params.auteur -}}
+      <span class="text-muted fs-5 no-print">une recette de {{ .Params.auteur }}</span>
       {{- end -}}
     </div>
 
-    <div class="">
+    <div class="col-md-6">
+    
+      {{ $linkCMSPage := (path.Join "/admin/#/collections/recettes/entries/" (.Type) (.File.ContentBaseName)) }}
+    
+      <div class="text-end mx-2 px-2 no-print"><a target="_blank" rel="noopener noreferrer" href="{{$linkCMSPage}}/index" >Modifier</a></div>
+      <div class="m-2 p-2 fs-5 text-end">
+        {{ partial "content/badge-recette.html" . }}
+      </div>
+      <div class="m-2 p-2 text-end">
+        {{- if .Params.materiel -}}
+          <span class="fw-bold">Materiel: </span>
+          {{- range .Params.materiel -}}
+            <span class="badge bg-grey">{{ . }}</span>
+          {{- end -}}
+        {{- end -}}
+      </div>
+  
+  <div class="printonly fs-6 text-end fw-bolder">
+    Quantité pour <span id="quantityDefined"> {{.Params.plate}}</span> couvert
+  </div>
+    </div>
+</div>
+
+
+{{/* lien vers le CMS de la page */}}
+
+
+  <div class="row ">
+    <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+ 
+      {{- if eq .Params.check "Oui" -}}
+        <span class="no-print">Cette recette a été testée pour {{.Params.plate}} couverts </span>
+        {{- if (.Params.checkfor) -}}
+          <span>et pour {{.Params.checkfor}} couverts</span>
+        {{- end -}}
+      {{- else -}}
+        <div class="card border-danger shadow mb-3">
+          <div class="card-body small">
+            <span class="card-text">Les auteur•ices de la recette ne l'ont <strong>pas testé</strong> pour le nombre de couverts indiqués par défaut ({{.Params.plate}}).<span class="no-print"> Merci de <a href="{{$linkCMSPage}}/index">modifier</a> la recette pour indiquer si vous l'avez testé avec succès, ou pour corriger les quantités d'ingrédients indiquées. A défaut, vous pouvez laisser vos commentaires dans le formulaire en bas de page</span></span>
+          </div>
+        </div>
+        
+      {{- end -}}
       <div class="no-print">
         <span id="quantityInit" style="display:none">{{.Params.plate}}</span>
         <form>
-          <div class="row">
-            <div class="col-lg-5">
-              <div class="input-group my-2">
-                <span class="input-group-text" for="amount">Nombre d'assietes à servir : </span>
-                <input type="number" class="form-control form-control-lg col-lg-3 col-md-2" id="quantityInput" name="quantityInput" value="{{.Params.plate}}" >
-              </div>
-                        </div>
-            </div>
+          <div class="input-group my-2">
+            <span class="input-group-text" for="amount">Nombre d'assietes à servir : </span>
+            <input type="number" class="form-control form-control-lg " id="quantityInput" name="quantityInput" value="{{.Params.plate}}" style="flex: 0 1 120px">
+          </div>
         </form>
       </div>
-      <div class="row ">
-        <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-          {{- if eq .Params.check "Oui" -}}
-            <span>Cette recette a été testée pour {{.Params.plate}} couverts </span>
-            {{- if ne .Params.checkfor "" -}}
-              <span>et pour {{.Params.checkfor}} couverts</span>
-            {{- end -}}
-          {{- else -}}
-            <div class="card border-danger shadow">
-              <div class="card-body small">
-                <span class="card-text">Les auteur•ices de la recette ne l'ont <strong>pas testé</strong> pour le nombre de couverts indiqués par défaut ({{.Params.plate}}).<span class="no-print"> Merci de <a href="{{$linkCMSPage}}/index">modifier</a> la recette pour indiquer si vous l'avez testé avec succès, ou pour corriger les quantités d'ingrédients indiquées. A défaut, vous pouvez laisser vos commentaires dans le formulaire en bas de page</span></span>
-                {{- if .Params.checkfor -}}
-                  <span class="card-text ">Elle à été pour validée {{.checkfor}} personnes.</span>
-                {{- end -}}
-              </div>
-            </div>
+      </div>
+      {{- with (or ( $alertAutresAllergenes ) ( $alertGluten) ( $alertLait) ( $alertPorc)) -}}
+      <div class="col-12 col-md-6 col-lg-6 col-xl-6 print-col-2">
+        <div class="card border-danger shadow small px-4 card-body print-nocard">
+          {{- with $alertAutresAllergenes -}}
+          <div> {{ partial "inline-svg" (dict "src" "fonticons/exclamation-triangle" "display" "inline" "fs" 3) }}
+            Allergènes divers:
+            <span class="fw-bold">{{ delimit $alertAutresAllergenes ", "}}</span>
+          </div>
+          {{- end -}}
+          {{- with $alertGluten -}}
+          <div>{{ partial "inline-svg" (dict "src" "fonticons/gluten" "display" "inline" "fs" 3) }}
+            Gluten :
+            <span class="fw-bold">{{ delimit $alertGluten ", "}}</span>
+          </div>
+          {{- end -}}
+          {{- with $alertLait -}}
+          <div>{{ partial "inline-svg" (dict "src" "fonticons/milk-box" "display" "inline" "fs" 3) }}
+            Produits laitier :
+            <span class="fw-bold">{{ delimit $alertLait ", "}}</span>
+          </div>
+          {{- end -}}
+          {{- with $alertPorc -}}
+          <div>{{ partial "inline-svg" (dict "src" "fonticons/no-vegan" "display" "inline" "fs" 3) }} Porc:
+            <span class="fw-bold">{{ delimit $alertPorc ", "}}</span>
+          </div>
           {{- end -}}
         </div>
-        {{- with (or ( $alertAutresAllergenes ) ( $alertGluten) ( $alertLait) ( $alertPorc)) -}}
-        <div class="col-12 col-md-6 col-lg-6 col-xl-6 print-col-2">
-          <div class="card border-danger shadow small px-4 card-body print-nocard">
-            {{- with $alertAutresAllergenes -}}
-            <div> {{ partial "inline-svg" (dict "src" "fonticons/exclamation-triangle" "display" "inline" "fs" 3) }}
-              Allergènes divers:
-              <span class="fw-bold">{{ delimit $alertAutresAllergenes ", "}}</span>
-            </div>
-            {{- end -}}
-            {{- with $alertGluten -}}
-            <div>{{ partial "inline-svg" (dict "src" "fonticons/gluten" "display" "inline" "fs" 3) }}
-              Gluten :
-              <span class="fw-bold">{{ delimit $alertGluten ", "}}</span>
-            </div>
-            {{- end -}}
-            {{- with $alertLait -}}
-            <div>{{ partial "inline-svg" (dict "src" "fonticons/milk-box" "display" "inline" "fs" 3) }}
-              Produits laitier :
-              <span class="fw-bold">{{ delimit $alertLait ", "}}</span>
-            </div>
-            {{- end -}}
-            {{- with $alertPorc -}}
-            <div>{{ partial "inline-svg" (dict "src" "fonticons/no-vegan" "display" "inline" "fs" 3) }} Porc:
-              <span class="fw-bold">{{ delimit $alertPorc ", "}}</span>
-            </div>
-            {{- end -}}
-          </div>
-        </div>
-        {{- end -}} 
-
-       
       </div>
-    <hr class="mt-2 no-print">
+      {{- end -}} 
+
+      
+      </div>
+    <hr class="my-3">
 
 
 {{/*  INGREDIENTS  */}}
@@ -257,38 +259,38 @@
 
   </div>
   </div>
-</div>
 
 <br><hr><br>
 <div class="no-print ">
   <div class="small">Si vous avez des retour d'experience à partager sur cette recette. Vous pouvez précisions, autres quantités, </div>
   {{ partial "components/giscus-comment" }}
 
-<script src="https://giscus.app/client.js"
-        data-repo="encas-parka/lesite"
-        data-repo-id="R_kgDOKdGong"
-        data-category="Polls"
-        data-category-id="DIC_kwDOKdGons4CZ74r"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="0"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="fr"
-        crossorigin="anonymous"
-        async>
-</script>
-</div>
 
 </div>
+</div>
+
+{{/*  :::Script : giscus + quantite  */}}
+  <script src="https://giscus.app/client.js"
+          data-repo="encas-parka/lesite"
+          data-repo-id="R_kgDOKdGong"
+          data-category="Polls"
+          data-category-id="DIC_kwDOKdGons4CZ74r"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="0"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="fr"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+  {{ partial "footer/esbuild" (dict "src" "js/quantite.js" "load" "async" "transpile" false) -}}
 
 {{ end }}
 
 
 
-{{- define "layout-footer-script" -}}
 
-   {{ partial "footer/esbuild" (dict "src" "js/quantite.js" "load" "async" "transpile" false) -}}
 
-{{- end -}}

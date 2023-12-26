@@ -1,17 +1,17 @@
+{{/*  DOCUMENTATION
+  La base qui définie la façon dont sont construite chacune des pages. 
+*/}}
+
 <!doctype html>
 <html lang="{{ .Site.LanguageCode | default "fr" }}">
   {{ partial "head/head.html" . }}
 
-{{/*  
-  Creer un espace au dessus de la navbar en rajoutant la class "section" à body. =>  
-*/}}
-
+  {{/*  Creer un espace au dessus de la navbar en rajoutant la class "section" à body. Mais de maniere générale définit des layout en fonction du type de page... from hyas*/}}
   {{/*  {{- partial "head/body-class.html" . -}}
    <body class="{{ delimit (.Scratch.Get "class") " " }}">   */}}
 
-{{/* ... */}}
 
-    {{/*  {{ block "layout-header-script" .}} {{end -}}      */}}
+
     {{ partial "header/header.html" . }}
     <div class="wrap container" role="document">
       <div class="content">
@@ -21,9 +21,8 @@
     {{ block "sidebar-footer" . }}{{ end }}
     {{ partial "footer/footer.html" . }}
     {{ partial "footer/script-footer.html" . }}
-    {{/*  {{ block "layout-footer-script" . }} {{end -}}   */}}
     
-    {{/* For specific layout script (→ in layout-footer-script)
+{{/* DOCUMENTATION : For specific layout script (→ in layout-footer-script)
     USAGE: Insert at the end of the layout page:
 
     {{ define "page-script"}}

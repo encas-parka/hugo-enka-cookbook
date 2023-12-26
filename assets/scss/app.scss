@@ -1,3 +1,9 @@
+/*
+ DOCUMENTATION :
+ Concaténation des fichiers scss. Il seront incorporés par /layouts/partials/head/stylesheet.html, après avoir été préparé en css par /layouts/partials/head/libsass.html
+*/
+
+
 /** Import modern-css-reset */
 @import "modern-css-reset/src/reset";
 
