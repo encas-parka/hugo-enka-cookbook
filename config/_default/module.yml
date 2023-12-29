@@ -1,10 +1,12 @@
 
 mounts:
 # bootstrap
-  - source: node_modules/bootstrap/scss
+  - source: node_modules/bootstrap/dist/css/bootstrap.min.css
     target: assets/scss/bootstrap
   - source: node_modules/bootstrap/dist/js/bootstrap.bundle.js
-    target: assets/js/bootstrap.js
+    target: assets/js/vendor/bootstrap.js
+  - source: node_modules/bootstrap/dist/js/bootstrap.min.js
+    target: assets/js/bootstrap.min.js
 
 # flatpickr
   - source: node_modules/flatpickr/dist/

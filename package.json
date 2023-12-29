@@ -1,41 +1,49 @@
 {
   "author": "QaldeK",
+  "description": "Hugo theme for cookbook site",
+
   "bugs": {
     "url": "https://github.com/encas-parka/hugo-enka-cookbook/issues"
   },
-  "comments": {
-    "dependencies": {
-      "@hyas/bootstrap": "project",
-      "@hyas/images": "project",
-      "@hyas/seo": "project",
-      "flatpickr": "project",
-      "netlify-identity-widget": "project",
-      "vuetify": "project"
-    },
-    "devDependencies": {
-      "auto-changelog": "project",
-      "decap-server": "project",
-      "gethyas": "project",
-      "prettier": "project",
-      "prettier-plugin-go-template": "project"
-    }
-  },
+
   "dependencies": {
-    "@hyas/bootstrap": "^1.0.4",
-    "@hyas/images": "^2.0.3",
-    "@hyas/seo": "^2.1.0",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
     "flatpickr": "^4.6.13",
     "netlify-identity-widget": "^1.9.2",
-    "vuetify": "^2.7.1"
+    "pnpm": "^8.13.1",
+    "vuetify": "^2.7.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "purgecss-whitelister": "^2.4.0",
+    "shx": "^0.3.4",
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "http-server": "^14.1.1",
+    "hugo-installer": "^4.0.1",
+    "lazysizes": "^5.3.2",    
+    "modern-css-reset": "^1.4.0",
+    "quicklink": "^2.3.0"
   },
-  "description": "Hugo theme for cookbook site",
   "devDependencies": {
     "auto-changelog": "^2.4.0",
     "decap-server": "^3.0.1",
+    "shx": "^0.3.4",
     "gethyas": "^2.2.2",
     "prettier": "2.8.8",
     "prettier-plugin-go-template": "0.0.13"
   },
+
+  "otherDependencies": {
+    "hugo": "0.119.0"
+  },
+  "engines": {
+    "node": ">=16.12.0"
+  },
+
   "homepage": "https://github.com/encas-parka/hugo-enka-cookbook#readme",
   "keywords": [
     "hugo-theme",
@@ -49,7 +57,7 @@
     "url": "https://github.com/encas-parka/hugo-enka-cookbook.git"
   },
   "scripts": {
-    "build": "exec-bin node_modules/.bin/hugo/hugo --minify ",
+    "build": "exec-bin node_modules/.bin/hugo/hugo --minify",
     "demo": "exec-bin node_modules/.bin/hugo/hugo --environment 'demo' --minify ",
     "clean": "npm run clean:build && npm run clean:lint && npm run clean:install",
     "clean:build": "shx rm -rf public resources .hugo_build.lock",
@@ -59,6 +67,7 @@
     "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --buildDrafts",
     "info": "npm list",
     "prebuild": "shx rm -rf node_modules/.bin/hugo && shx mkdir node_modules/.bin/hugo && shx cp node_modules/gethyas/node_modules/.bin/hugo/* node_modules/.bin/hugo",
+    "postinstall": "",
     "preinfo": "npm version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,5 +1,6 @@
-
-{{ partial "footer/esbuild" (dict "src" "js/bootstrap.js" "load" "async" "transpile" false) -}}
+{{/*  XXX : re-minifier par esbuild...  */}}
+{{ partial "footer/esbuild" (dict "src" "js/vendor/bootstrap.min.js" "load" "async" "transpile" false) -}}
+  
 
 <!-- Charge les script js importé dans app.js -->
 {{ partial "footer/esbuild" (dict "src" "js/app.js" "targetPath" "main.js" "load" "async" "transpile" false) -}}
