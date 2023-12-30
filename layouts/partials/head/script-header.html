@@ -9,8 +9,7 @@
   src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
 ></script>
 
-{{/*  USELESS : identity widget doit il etre sur toutes les pages ?  */}}
-{{/*  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  */}}
+
 
 {{ if or (eq .Type "evenements") (eq .Type "ingredients") (eq .Type "recettes")}}
 
@@ -20,25 +19,13 @@
   {{end}}
 
   {{ if not hugo.IsProduction }}
-    {{ $vuejs := resources.Get "js/vendor/vue.js" | resources.Fingerprint "sha512" }}
+    {{ $vuejs := resources.Get "js/vendor/vue.common.dev.js" | resources.Fingerprint "sha512" }}
     <script src="{{- $vuejs.Permalink -}}" integrity="{{ $vuejs.Data.Integrity }}"></script>
   {{end}}
 
 {{ end }}
 
-{{- if eq .Type "recettes" -}}
 
-  {{ if hugo.IsProduction }}
-    {{ $vuetify := resources.Get "js/vendor/vuetify.min.js" | resources.Fingerprint "sha512" }}
-    <script src="{{- $vuetify.Permalink -}}" integrity="{{ $vuetify.Data.Integrity }}"></script>
-  {{ end }}
-
-  {{ if not hugo.IsProduction }}
-    {{ $vuetify := resources.Get "js/vendor/vuetify.js" | resources.Fingerprint "sha512" }}
-    <script src="{{- $vuetify.Permalink -}}" integrity="{{ $vuetify.Data.Integrity }}"></script>
-  {{ end }}
-  
-{{ end }}
 
 
 
