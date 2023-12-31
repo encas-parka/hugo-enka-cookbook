@@ -45,7 +45,7 @@
 // @import "bootstrap/alert";
 // @import "bootstrap/progress";
 // @import "bootstrap/list-group";
-// @import "bootstrap/close";
+@import "bootstrap/close";
 // @import "bootstrap/toasts";
 @import "bootstrap/modal";
 // @import "bootstrap/tooltip";
@@ -56,7 +56,7 @@
 // @import "bootstrap/placeholders";
 
 // Helpers
-// @import "bootstrap/helpers";
+@import "bootstrap/helpers";
 
 // Utilities
 @import "bootstrap/utilities/api";
@@ -82,6 +82,8 @@
 @import "components/recipe-card";
 @import "components/breadcrumb";
 @import "components/inline-svg";
+@import "../flatpickr/flatpickr.min";
+@import "../multiselect/multi-select";
 
 //
 @import "common/print";

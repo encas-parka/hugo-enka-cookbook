@@ -22,35 +22,7 @@
     {{ partial "footer/footer.html" . }}
     {{ partial "footer/script-footer.html" . }}
     
-{{/* DOCUMENTATION : For specific layout script (→ in layout-footer-script)
-    USAGE: Insert at the end of the layout page:
 
-    {{ define "page-script"}}
-      {{- $script:=  resources.Get "js/quantite.js" | js.Build (dict "sourceMap" "external" ) | resources.Minify | resources.Fingerprint  -}}
-      <script type="text/javascript" src="
-      
-      {{$script.RelPermalink}}" integrity=" {{ $script.Data.Integrity }}"></script>
-    {{end}} 
-
-    Or For Buddle js:
-    {{ define "page-script"}}
-      {{ $menu := resources.Get "js/menu.js" }}
-
-      {{ $prism := resources.Get "js/prism.js" }}
-
-      {{ $theme := resources.Get "js/theme.js" }}
-
-      {{ $bundle := slice $menu $prism $theme | resources.Concat "js/bundle.js" | js.Build (dict "sourceMap" "external" ) | resources.Minify | resources.Fingerprint }}
-
-      <script type="text/javascript" src="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}"></script>
-    {{end}}
-
-    Or, with partial (from layout/partials/footer/esbuild in hyas theme)
-
-    {{ define "page-script"}}
-      {{ partial "footer/esbuild" (dict "src" "js/script.js" "load" "async" "transpile" false) -}}
-    {{end}}
-    */}}
 
   </body>
 </html> 

@@ -918,24 +918,6 @@
 
 {{/*  Import de flatpiker, utilisé seulement sur cette page  */}}
 
-{{ $jsfp := resources.Get "flatpickr/flatpickr.min.js" }}
-{{ $jsfp_fr := resources.Get "flatpickr/l10n/fr.js" }}
-
-{{ $cssfp := resources.Get "flatpickr/flatpickr.min.css"  }}
-{{ if hugo.IsProduction }}
-  {{ $cssfp = $cssfp | fingerprint | postCSS }}
-  {{ $jsfp = $jsfp | fingerprint }}
-{{end}}
-<link rel="stylesheet" 
-   href="{{$cssfp.RelPermalink}}"   
-   {{ if hugo.IsProduction -}} 
-    integrity="{{ $cssfp.Data.Integrity }}"
-   {{- end }}
->
-<script src="{{$jsfp.RelPermalink}}"></script>
-<script src="{{$jsfp_fr.RelPermalink}}"></script>
-
-
 <script nonce="6GwL6l4yhLQddbSv2ftKfX9sTqEkpYcmwyUPm5LEdgqF6VP27IUA5SLae8ScqZ171xC7gGVVZAOuYPJnsiUAzPadx4yFkdQ7GNHa" type="module">
   flatpickr.localize(flatpickr.l10ns.fr);
   {{/*  :::VUEAPP  */}}
