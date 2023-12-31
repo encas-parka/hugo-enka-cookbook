@@ -3,9 +3,7 @@
 <!-- Charge les script js importé dans app.js -->
 {{ partial "footer/esbuild" (dict "src" "js/app.js" "targetPath" "main.js" "load" "async" "transpile" false) -}}
 
-{{ if eq .Type "registration" }}
-  {{ partial "footer/esbuild" (dict "src" "js/vendor/netlify-identity-widget.js" "load" "async" "transpile" false) -}}
-{{ end }}
+{{ partial "footer/esbuild" (dict "src" "js/vendor/netlify-identity-widget.js" "load" "async" "transpile" false) -}}
 
 
 
