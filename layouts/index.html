@@ -59,7 +59,7 @@
             </div>
       </div>
     </div>
-
+    {{ if eq hugo.Environment "demo" }}
     <div class="card m-3">
       <div class="card-body">
         <div class="card-title h5 text-center">Des exemples de pages évenements</div>
@@ -74,7 +74,7 @@
         </div>
       </div>
     </div>
-    
+    {{ end}}
   </div>
 </div>
 
