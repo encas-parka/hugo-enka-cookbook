@@ -1,9 +1,9 @@
 {{ define "main" }}
 <div class="section mb-5 p-3">
     <div class="row">
-      <div class="col-lg-4 col-md-6 col">
-        <div class="d-grid gap-3 col-8 mx-auto">
-          <img src="/cover.png" alt="logo">
+      <div class="col-lg-4 col-md-6 col m-auto">
+        <div class="d-grid gap-3 col-8 m-auto">
+          <img src="/cover.png" alt="logo" class="w-100">
           <a href="/admin" target="_blank" class="btn btn-lg  btn-primary align-self-center">Se connecter</a>
         </div>
       </div>
@@ -13,15 +13,40 @@
           <div class="card-body">
             <div class="card-text">
               <ul>
-                <li class="fw-bold"><a href="#" >  Publier des recettes, des évènements, etc. Le Guide... </a></li>
-                <li><a href="">Dupliquer ce site</a></li>
+                <li class="fw-bold"><a href="#" >  Publier des recettes, des évènements, etc. Le Guide... (doc a venir...)</a></li>
+                <li><a href="">Dupliquer ce site (doc a venir...)</a></li>
               </ul>
             </div>
           </div>
         </div>
+        {{ if (eq (hugo.Environment) "demo") }}
+          <div class="card border-danger my-3">
+            <div class="card-header fs-5 fw-bold text-danger border-danger">Site de Démonstration</div>
+            <div class="card-body ">
+              <div class="card-text">
+                <p>Ce site permet de tester l'interface d'édition. Néanmoins, les modifications apportées ne sont pas prises en compte.Elle ne seront donc pas visible sur le site.</p>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+
       </div>
     </div>
 </div>
+
+{{ if not (eq hugo.Environment "demo") }}
+
+<div class="card border-info my-3">
+  <div class="card-body p-4">
+    <div class="card-text text-center">
+      <p> Si vous souhaitez juste avoir un aperçu de l'interface d'édition, c'est possible sur le site de démonstration. Pas besoin de compte github, juste un email et mot de passe à choisir. Vous pourrez tester l'interface d'édition, mais les modifications apportées ne seront pas prises en compte, et ne seront donc pas visible sur le site </p>
+    </div>
+    <div class="d-flex justify-content-center mt-4"><a href="https://hugo-cookbook-demo.netlify.app/registration" target="_blank" class="btn btn-info ">Aller sur le site de démonstration</a></div>
+    </div>
+  </div>
+</div>
+
+
 <div class="row justify-content-evenly">
   <div class="col-lg-5">
     <div class="card">
@@ -31,22 +56,20 @@
       <div class="card-body small">
         <p class=" ">
           Les comptes authentifiés peuvent directement publier ou modifier des
-          recettes, créer des évenements, etc, sans modération préalable. Le traitement des demandes se fait manuellement, et peut donc prendre un certain temps.
+          recettes, créer des évenements, etc, sans modération préalable. Le traitement des demandes se fait manuellement, et peut donc prendre un certain temps.  C'est la méthode recommender si vous souhaitez collaborer au site régulièrement.
         </p>
-        <p>Vous devrez disposer d'un compte github avec la même adresse e-mail</p>
+        <p>Vous devez disposer d'un compte github avec la même adresse e-mail</p>
         <form
           name="contact"
           class="contact-form width-normal"
           action="/contact-thank-you/"
           method="POST"
           data-netlify="true"
-          netlify-honeypot="bot-field"
+          netlify-honeypot="contact"
         >
           <input type="hidden" name="form-name" value="contact" />
           <div class="form-group">
-          <div class="hidden">
-            <label><input name="bot-field" /></label>
-          </div>
+
             <!-- Text input-->
             <label class="contact-form-1 control-label" for="Email"></label>
             <div class="contact-form-1">
@@ -71,14 +94,19 @@
               rows="5"
             ></textarea>
             <!-- Button -->
-            <button
-              class="btn btn-primary float-end mt-2"
-              type="submit"
-              value="Submit"
-              id="Form-submit"
-            >
-              Envoyer
-            </button>
+             <div class="mt-4">
+               <a href="https://github.com/signup" target="_blank" class="btn btn-info">S'inscrire sur github</a>
+               
+                <button
+                class="btn btn-primary float-end "
+                type="submit"
+                value="Submit"
+                id="Form-submit"
+                >
+                Envoyer
+                </button>
+
+             </div>
           </div>
         </form>
       </div>
@@ -94,9 +122,7 @@
           <p class="">Il est possible de proposer des modifications au site en quelques clic. Pour cela, il suffit d'avoir un d'un compte github (plateforme sur lequel est hebergé le site). Ensuite, la premiere fois que vous essayerez de vous connecter à enka-cookbook, vos identifiants github vous serons demandés, et si vous n'avez pas obtenu de compte authentifié sur enka-cookbook, il vous sera demander d'accepter de faire un "fork" du dépot. Vous serez ensuite redirigé vers la page d'édition du site. </p>
           <p>Les modifications que vous proposerez devront être valider par le compte administrateur du site avant d'être publié sur le site.</p>
         </div>
-      </div>
-      <div class="card-footer">
-        <div class="align-content-around">
+        <div class="d-flex justify-content-around mt-4">
           <a href="https://github.com/signup" target="_blank" class="btn btn-info">S'inscrire sur github</a>
           <a href="/admin" target="_blank" class="btn btn-success">Se connecter à enka-cookbook</a>
         </div>
@@ -105,5 +131,9 @@
   </div>
 
 </div>
+{{ end }} {{/* not demo */}}
+
+
+
 
 {{ end }}
