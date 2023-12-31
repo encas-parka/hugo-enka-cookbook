@@ -54,7 +54,7 @@
         
 
         <ul class="navbar-nav">
-          <li class="nav-item small mx-4">
+          <li class="nav-item small m-2 ">
             <a 
               href="" 
               class="nav-link"
@@ -63,20 +63,31 @@
               >
               Les Evenements</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item m-2" >
             <a 
-              class="btn btn-outline-primary btn-sm mx-2" data-bs-toggle="modal"
+              class="btn btn-outline-primary btn-sm " data-bs-toggle="modal"
               data-bs-target="#search-recipes-modal">
               {{ partial "inline-svg" (dict "src" "fonticons/search.svg" "display" "block" "fs" 4) }}
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item m-2">
             <a href="/registration" 
               class="btn btn-outline-primary btn-sm" style="display: flex; align-items: center;">
               {{partial "inline-svg" (dict "src" "fonticons/person-circle.svg" "fs" 4 ) }}
-              <span class="mx-2">Connexion</span>
+              <span class="mx-2">Inscription</span>
             </a>
           </li>
+
+          {{ if not (eq hugo.Environment "demo") }}
+          <li class="nav-item m-2">
+           <a href="/admin" 
+             class="btn btn-outline-primary btn-sm" style="display: flex; align-items: center;">
+             {{partial "inline-svg" (dict "src" "fonticons/box-arrow-in-right.svg" "fs" 4 ) }}
+             <span class="mx-2">Connexion</span>
+           </a>
+         </li>
+          
+          {{ end }}
         </ul>
       </div>
 
