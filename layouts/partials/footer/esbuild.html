@@ -8,7 +8,7 @@
 {{ if .transpile -}}
   {{ $js = resources.Get $src | js.Build | babel ("noComments" true "minified" true "compact" true "config" "config/babel.config.js") | fingerprint "sha512" -}}
 {{ else if eq (hugo.Environment) "development" -}}
-  {{ $js = resources.Get $src | js.Build (dict "targetPath" $targetPath "sourceMap" "inline") | fingerprint "sha512" -}}
+  {{ $js = resources.Get $src | js.Build (dict "targetPath" $targetPath "sourceMap" "inline") -}}
 {{ else -}}
   {{ $js = resources.Get $src | js.Build (dict "targetPath" $targetPath "minify" true ) | fingerprint "sha512" -}}
 {{ end -}}

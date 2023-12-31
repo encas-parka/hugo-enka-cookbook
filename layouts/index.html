@@ -7,7 +7,7 @@
 
     
 <div class="" >
-  <div class="mb-5"><img src="/cover.png" alt="" width="256" class="mx-auto"></div>
+  <div class="mb-5 d-block"><img src="/cover.png" alt="" width="256" class="d-block m-auto"></div>
   <h1 class="text-center">{{.Site.Title}}</h1>
   <div class="section py-4">
     <div class="search-wrapper p-4">
@@ -39,8 +39,8 @@
             <div class="row justify-content-evenly">
             {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
                 <div class="col-5 card card-recette my-3 text-center fw-bold border-1 ">
-                  <a href="categories/{{ $name | urlize }}" class="stretched-link"></a>
-                  {{ $name | humanize }} ({{$taxonomy.Count }})
+                  <a href="categories/{{ $name | urlize }}" >
+                  {{ $name | humanize }} ({{$taxonomy.Count }})</a>
                 </div>
               {{end}}
           </div>
@@ -52,11 +52,26 @@
             <div class="card p-3 g-3 m-4">
               {{ range $name, $taxonomy := .Site.Taxonomies.regime }}
                 <div class="card card-recette mb-3 text-center font-weight-bold border-1 ">
-                  <a href="/regime/{{ $name | urlize }}" class="stretched-link"></a>
-                  {{ $name | humanize }} ({{$taxonomy.Count }})
+                  <a href="/regime/{{ $name | urlize }}" >
+                  {{ $name | humanize }} ({{$taxonomy.Count }})</a>
                 </div>
               {{end}}
             </div>
+      </div>
+    </div>
+
+    <div class="card m-3">
+      <div class="card-body">
+        <div class="card-title h5 text-center">Des exemples de pages évenements</div>
+        <div class="row justify-content-evenly">
+          {{ range (where .Site.RegularPages "Section" "evenements") }}
+            <div class="col-lg-3 col-md-2">
+              <div class="card card-recette mb-3 text-center font-weight-bold border-1 m-auto">
+                <a href="{{ .Permalink }}">{{.Title}}</a>
+              </div>
+            </div>
+          {{ end }}
+        </div>
       </div>
     </div>
     

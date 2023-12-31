@@ -1,49 +1,38 @@
 {
   "author": "QaldeK",
   "description": "Hugo theme for cookbook site",
-
   "bugs": {
     "url": "https://github.com/encas-parka/hugo-enka-cookbook/issues"
   },
-
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.2",
-    "flatpickr": "^4.6.13",
-    "netlify-identity-widget": "^1.9.2",
-    "pnpm": "^8.13.1",
-    "vuetify": "^2.7.1",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0",
-    "purgecss-whitelister": "^2.4.0",
-    "shx": "^0.3.4",
-    "@babel/cli": "^7.23.0",
-    "@babel/core": "^7.23.2",
-    "@babel/preset-env": "^7.23.2",
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.7",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.16",
+    "bootstrap": "^5.3.2",
     "exec-bin": "^1.0.0",
+    "flatpickr": "^4.6.13",
     "http-server": "^14.1.1",
     "hugo-installer": "^4.0.1",
-    "lazysizes": "^5.3.2",    
-    "modern-css-reset": "^1.4.0",
-    "quicklink": "^2.3.0"
+    "netlify-identity-widget": "^1.9.2",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^10.1.0",
+    "purgecss-whitelister": "^2.4.0",
+    "quicklink": "^2.3.0",
+    "shx": "^0.3.4",
+    "vue": "^2.7.16"
   },
   "devDependencies": {
-    "auto-changelog": "^2.4.0",
     "decap-server": "^3.0.1",
-    "shx": "^0.3.4",
-    "prettier": "2.8.8",
-    "prettier-plugin-go-template": "0.0.13"
+    "shx": "^0.3.4"
   },
-
   "otherDependencies": {
-    "hugo": "0.119.0"
+    "hugo": "0.121.0"
   },
   "engines": {
     "node": ">=16.12.0"
   },
-
   "homepage": "https://github.com/encas-parka/hugo-enka-cookbook#readme",
   "keywords": [
     "hugo-theme",
@@ -57,8 +46,8 @@
     "url": "https://github.com/encas-parka/hugo-enka-cookbook.git"
   },
   "scripts": {
-    "build": "exec-bin node_modules/.bin/hugo/hugo --cleanDestinationDir --minify",
-    "demo": "exec-bin node_modules/.bin/hugo/hugo --environment 'demo' --cleanDestinationDir --minify ",
+    "build": "exec-bin node_modules/.bin/hugo/hugo --minify",
+    "builddemo": "exec-bin node_modules/.bin/hugo/hugo --environment 'demo' --minify ",
     "clean": "npm run clean:build && npm run clean:lint && npm run clean:install",
     "clean:build": "shx rm -rf public resources .hugo_build.lock",
     "clean:install": "shx rm -rf node_modules package-lock.json yarn.lock pnpm-lock.yaml",
@@ -66,10 +55,10 @@
     "dev": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache",
     "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --buildDrafts",
     "info": "npm list",
-    "prebuild": "shx rm -rf node_modules/.bin/hugo && shx mkdir node_modules/.bin/hugo && shx cp node_modules/gethyas/node_modules/.bin/hugo/* node_modules/.bin/hugo",
     "preinfo": "npm version",
     "postinfo": "exec-bin node_modules/.bin/hugo/hugo version",
-    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo"
+    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo",
+    "upassets": "pnpm update && shx cp -ru node_modules/bootstrap/scss assets/scss/bootstrap && shx cp -ru node_modules/bootstrap/dist/js/bootstrap.bundle.js assets/js/vendor  && shx cp -u node_modules/bootstrap/dist/js/bootstrap.bundle.min.js assets/js/vendor && shx cp -u node_modules/vue/dist/vue.common.dev.js asset/js/vendor  && shx cp -u node_modules/vue/dist/vue.min.js asset/js/vendor && shx cp -u node_modules/flatpickr/dist/flatpick.js assets/flatpickr  && shx cp -u node_modules/flatpickr/dist/flatpick.min.js assets/flatpickr && shx cp -u node_modules/flatpickr/dist/l10n/fr.js assets/flatpickr && shx cp -u node_modules/netlify-identity-widget/build/netlify-identity-widget.js assets/js/vendor && shx cp -u node_modules/alpinejs/dist/cdn.min.js assets/js/vendor "
   },
   "version": "0.9.0"
 }
