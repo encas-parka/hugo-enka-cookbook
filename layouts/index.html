@@ -34,45 +34,49 @@
 <div class="section my-4 py-4">
     <div class="row">
       <div class="col-lg-8">
-        <h5 class="text-center">catégories</h5>
         <div class=" card p-3 gu-3 m-4">
-            <div class="row justify-content-evenly">
-            {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+          <div class="card-body">
+            <h5 class="text-center mt-2">Catégories</h5>
+              <div class="row justify-content-evenly">
+                {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
                 <div class="col-5 card card-recette my-3 text-center fw-bold border-1 ">
-                  <a href="categories/{{ $name | urlize }}" >
-                  {{ $name | humanize }} ({{$taxonomy.Count }})</a>
-                </div>
-              {{end}}
+                    <a href=" {{ .Page.Permalink }}" class="fw-bolder streched-link">
+                    <div>{{ partial "components/icon.html" .  }}</div>
+                      {{.Page.Title }} ({{$taxonomy.Count }})</a>
+                  </div>
+                {{end}}
+            </div>
           </div>
         </div>
       </div>
       
       <div class="col-lg-4">
-        <h5 class="text-center">régimes alimentaires</h5>
-            <div class="card p-3 g-3 m-4">
-              {{ range $name, $taxonomy := .Site.Taxonomies.regime }}
-                <div class="card card-recette mb-3 text-center font-weight-bold border-1 ">
-                  <a href="/regime/{{ $name | urlize }}" >
-                  {{ $name | humanize }} ({{$taxonomy.Count }})</a>
-                </div>
-              {{end}}
+        <div class="card p-3 g-3 m-4">
+              <div class="card-body">
+                <h5 class="text-center mt-2">Régimes alimentaires</h5>
+                {{ range $name, $taxonomy := .Site.Taxonomies.regime }}
+                  <div class="card card-recette mb-3 text-center  border-1 ">
+                    <a href=" {{.Page.Permalink}}" class="fw-bolder streched-link">
+                    <div>{{ partial "components/icon.html" . }}</div>
+                      {{ .Page.Title}} ({{$taxonomy.Count }})</a>
+                  </div>
+                {{end}}
+              </div>
             </div>
       </div>
     </div>
     {{ if eq hugo.Environment "demo" }}
-    <div class="card m-3">
-      <div class="card-body">
-        <div class="card-title h5 text-center">Des exemples de pages évenements</div>
+    <div class="card p-3 m-3">
+        <h5 class="mt-2  text-center">Des exemples de pages évenements</h5>
         <div class="row justify-content-evenly">
           {{ range (where .Site.RegularPages "Section" "evenements") }}
-            <div class="col-lg-3 col-md-2">
+            <div class="col-lg-3 col-md-2 mt-3">
               <div class="card card-recette mb-3 text-center font-weight-bold border-1 m-auto">
-                <a href="{{ .Permalink }}">{{.Title}}</a>
+                <a href="{{ .Permalink }}" class="fw-bolder">{{.Title}}</a>
               </div>
             </div>
           {{ end }}
         </div>
-      </div>
     </div>
     {{ end}}
   </div>

@@ -6,16 +6,30 @@
   }
 }
 
+
+
 @media print {
-
-
- .print-enlarge { 
-    border: 0;
-    margin: 0;
-    padding: 0;
+  
+  @page {
+    size: A4;
   }
 
+  body {
+ 
+    padding: 1.5cm;
+  }
 
+  /* .print-enlarge {
+    border-width: 0 !important;
+    border-color: #ffffff !important;
+  } */
+
+  .print-nocard{
+    border: 0;
+    margin: 0 !important;
+    padding: 0;
+  }
+  }
 
   // Pour définir des colonnes pour l'impression (les annuler ou les creer)
   .print-col-12 {
@@ -83,7 +97,7 @@
     font-weight: 600;
   }
 
-  print-mw-10 {
+  .print-mw-10 {
     max-width: 10%
   }
 
@@ -127,10 +141,6 @@
 
 
 
-
-  @page {
-    size: A4;
-  }
 
   /*!
   * Gutenberg
@@ -601,12 +611,7 @@
     word-wrap: break-word
   }
 
-  body {
-    // padding-bottom: 1.8cm;
-    // padding-left: 1.8cm;
-    // padding-right: 1.8cm;
-    // padding-top: 1.8cm
-  }
+
 
   a[href^='http']:after,
   a[href^='ftp']:after {
@@ -702,35 +707,7 @@
     border-color: #dee2e6;
   }
 
-  // Vuetify custom
 
-  .v-data-table>.v-data-table__wrapper>table>tbody>tr>td,
-  .v-data-table>.v-data-table__wrapper>table>tfoot>tr>td,
-  .v-data-table>.v-data-table__wrapper>table>thead>tr>td,
-  .v-data-table--dense>.v-data-table__wrapper>table>tbody>tr>th,
-  .v-data-table--dense>.v-data-table__wrapper>table>tfoot>tr>th,
-  .v-data-table--dense>.v-data-table__wrapper>table>thead>tr>th {
-    font-size: .75rem !important;
-    height: 1cm !important;
-    border: 1px solid black;
-    padding: 2px, 12px !important;
-    line-height: 1.125;
-  }
-
-  .v-application * {
-    box-shadow: none !important;
-  }
-
-
-
-
-
-  .card {
-    border-color: black !important;
-    box-shadow: none ! important
-  }
-
- 
 
 
   

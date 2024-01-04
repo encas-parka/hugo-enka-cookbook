@@ -10,7 +10,7 @@ categories:
 regime:
   - vegetarien
   - vegan
-  - sans-glutten
+  - sans-gluten
   - sans-lactose
 cuisson: Oui
 temperature: Froid

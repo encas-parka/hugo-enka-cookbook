@@ -166,44 +166,65 @@
 
 {{ $allergenesLgList := slice "Poisson" "Oeuf" "Soja" "Sésame" "Moutarde" "Fruit à coque" "Céleri" "Crustacé" "Arachide" "Mollusque"}}
 
-<div id="app">
 {{/*  lien vers le CMS de la page  */}}
   {{ $linkCMSPage := (path.Join "/admin/#/collections/evenement/entries/" (.Title | urlize)) }}
   <span class="text-end no-print p-2"><a target="_blank" rel="noopener noreferrer" href="{{$linkCMSPage}}/index">Modifier</a></span>
 
-
+<div id="app">
 
 {{/* ::: navbar page */}}
-<div class="position-sticky top-0 z-9 no-print">
-  <nav class="navbar navbar-expand-md navbar-light bg-light shadow py-2  rounded-bottom-4 border border-2 ">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarEvent"
-      aria-controls="navbarEvent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarEvent">
-      <ul class="navbar-nav">
-        <li class="nav-item p-1">
-          <a href="#Recettes" class="btn btn-primary shadow-sm"
-          >Recettes</a>
-        </li>
-        <li class="nav-item p-1">
-          <a href="#TotalIngredients" class="btn btn-primary shadow-sm"
-            >Ingrédients</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item p-1">
-          <button class="btn btn-primary shadow-sm" data-bs-toggle="modal"  data-bs-target="#modalImpression"
-          aria-controls="modalImpression"
-          @click="printGlobal"  
-            >
-            Impression / PDF
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
+  <div x-on:resize.window="screenMd = (window.innerWidth > 1024) ? true : false" x-data="{screenMd: (window.innerWidth > 1024) ? true : false}">
+    <nav class="navbar fixed-top navbar-expand-lg topnav2 no-print navbar-dark bg-dark shadow p-0  rounded-bottom-4 pt-2 ">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="btn-group" role="group">
+               
+                <a href="#Recettes" class="btn btn-primary shadow-sm py-1"
+                ><span class="me-2">{{ partial "inline-svg" (dict "src" "fonticons/preparation.svg" "display" "inline-middle" "fs" 5) }}</span> <span x-show="screenMd">Recettes</span></a>
+              
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>>{{ partial "inline-svg" (dict "src" "fonticons/search.svg" "display" "inline-middle" "fs" 5) }}</button>
+              
+               <ul class="dropdown-menu columns-3 p-3">
+                {{ $dateService := "none"}}
+                {{ $horaire := "none" }}
+                <div class="row row-cols-2 p-2">
+                  {{- range sort $recettesList ".dateService" -}}
+                    <div class="p-2">
+                      <div class="card p-1">
+                        <a href="#recetteID{{ .recetteKey }}">
+                          <slot name="{{ .recetteKey }}"></slot>{{.dateService | time.Format "Mon 2" | urlize}} - {{.recette }}<span class="small"> ({{.horaire}})</span>
+                        </a>
+                      </div>
+                    </div>
+                  
+                  {{/*  Actualiser la date apres le range  */}}
+                  {{ $dateService = (.dateService | time.Format "Monday 2 January ")}}
+                {{end}}
+              </div>
+            </ul>
+          </div>
+          </li> 
+          </ul>
+            <ul class="navbar-nav">
+            <li class="nav-item p-2">
+              <a href="#TotalIngredients" class="btn btn-primary shadow-sm py-1"
+                ><span class="me-2">{{ partial "inline-svg" (dict "src" "fonticons/ingredients.svg" "display" "inline-middle" "fs" 5) }}</span><span x-show="screenMd">Ingrédients</span></a>
+            </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item p-2">
+              <button class="btn btn-primary shadow-sm py-1" data-bs-toggle="modal"  data-bs-target="#modalImpression"
+              aria-controls="modalImpression"
+              @click="printGlobal"
+                ><span class="me-2">{{ partial "inline-svg" (dict "src" "fonticons/printer.svg" "display" "inline-middle" "fs" 5)}}</span>
+                <span x-show="screenMd">Impression / PDF</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+    </nav>
+  </div>
 
 {{/*  ::: Impression - MODAL  */}}
 <div class="modal modal-lg fade d-print-none" tabindex="-1" id="modalImpression" aria-labelledby="modalImpressionLabel" aria-hidden="true">
@@ -315,13 +336,11 @@
         {{- range sort $recettesList ".dateService" -}}
 
         <div>
-
+          
           {{ if and (ne (.dateService | time.Format "Monday 2 January ") $dateService) }}
-
             <a href="#{{ .dateService | time.Format "Monday 2 January" |urlize}}" class="fw-bolder">
               <slot name='{{.dateService | time.Format "Monday 2 January" | urlize}}'>{{.dateService | time.Format "Monday 2 January"}}</slot>
             </a>
-          
           {{ end }}
 
           <div class="ms-5">
@@ -376,11 +395,11 @@
 {{- $url:= print .recette | urlize -}}
 {{- with site.GetPage $url -}} 
 <div 
-  class="card break-after avoid-break-inside my-4 p-2 bg-light bg-opacity-25 print-enlarge"
+  class="card break-after avoid-break-inside my-5 p-2 bg-light bg-opacity-25 print-nocard"
   id="recetteID{{$recetteKey}}"
   :class="{ 'no-print': !toPrint.recetteID{{$recetteKey}} }"
   >
-  <div class="card-body py-1 print-enlarge">
+  <div class="card-body py-1">
     <a class="btn btn-sm btn-outline-primary float-end no-print mx-1" 
     @click="printThis('recetteID{{$recetteKey}}', 'recettesSection')" 
     > {{ partial "inline-svg" (dict "src" "fonticons/printer"  "fs" 3) }} </a>
@@ -388,7 +407,7 @@
     href="{{.RelPermalink}}"
     > {{ partial "inline-svg" (dict "src" "fonticons/box-arrow-in-right"  "fs" 3) }} </a>
     <div id="titreRecette" class="py-1h2 my-2">
-      <div class="my-2 h2">{{ $recette }}
+      <div class="my-2 h2">{{ partial "components/icon-recette" . }} {{ $recette }}
         {{ if $partof }}
         <span class="ms-3 fs-5">(pour : {{ $partof }})</span>
         {{ end }}
@@ -499,7 +518,7 @@
         <div class="col-12 col-md-6 col-lg-6 col-xl-6 print-col-2 my-3">
           <div class="card border-danger shadow small px-4 card-body print-nocard">
             {{ if not $checkYes }}
-            <div> {{ partial "inline-svg" (dict "src" "fonticons/exclamation-circle" "display" "inline" "fs" 4) }}
+            <div> <span class="me-1">{{ partial "inline-svg" (dict "src" "fonticons/exclamation-circle" "display" "inline" "fs" 4) }}</span>
               Le nombre de couverts prévu est significativement différent de celui qui a été déclaré comme testé
               ({{$compareQuantite}}): les proportions
               sont peut-être à adapter pour certains ingrédients. </div>
@@ -513,7 +532,7 @@
         <div class="col-12 col-md-6 col-lg-6 col-xl-6 print-col-2 my-3">
           <div class="card border-danger shadow small px-4 card-body print-nocard">
             {{- with $alertAutresAllergenes -}}
-            <div> {{ partial "inline-svg" (dict "src" "fonticons/exclamation-triangle" "display" "inline" "fs" 3) }}
+            <div><span class="me-1"> {{ partial "inline-svg" (dict "src" "fonticons/exclamation-triangle" "display" "inline" "fs" 4) }}</span>
               Allergènes divers:
               <span class="fw-bold">{{ delimit $alertAutresAllergenes ", "}}</span>
             </div>
@@ -540,18 +559,16 @@
         {{- end -}} 
       </div>
        
-      <hr class="my-1 printonly">
-   
-
+      
     </div> 
     {{ end }} {{/* with site.GetPage $url */}}
-
-
-      
+    
+    
+    
     {{/* :::  ___LES INGREDIENTS  */}}
-    <div id="IngredientsEtPreparation-recette" class="row" v-show="displayDetailsRecettes">
+    <div id="IngredientsEtPreparation-recette" class="row justify-content-evenly border-top border-1 pt-2" v-show="displayDetailsRecettes">
       <div id="Ingredients-recette" class="col-md-4 print-col-30-100">
-        <h5 class="text-center">Ingrédients</h5>
+      <h4><span class="me-2">{{ partial "inline-svg" (dict "src" "fonticons/ingredients" "display" "inline-middle" "fs" 2) }}</span> Ingredients </h4>
         
       {{/*  variable avant GetPage  */}}
         {{- $assiettes:= (int .assiettes)  -}}
@@ -568,13 +585,13 @@
         <div class="card my-2 p-2 " outlined>
           <div class="row">
             <div class="col">
-              <span class="">{{ $key | strings.FirstUpper }} </span>
+              <div class="mb-2"> {{ partial "components/icon-type"  (dict "icon" $key) }} <span class="fw-bold">{{ partial "components/ingredients-types-rename" (dict "ingType" ($key  | strings.FirstUpper )) .}}</span> </div>
               
               {{ range $index, $element := . -}}
               <div class="small ps-2">
 
                   {{/* Pour obtenir les quantité correspondant au nombres d'assiettes indiquées */}}
-                  <span class="fw-bold">{{ partial "components/ingredients" (dict "title" .title "alergene" $allergenesList)
+                  <span class="fw-bold">• {{ partial "components/ingredients" (dict "title" .title "alergene" $allergenesList)
                     }}</span>
 
                   {{ if .quantite }}
@@ -633,9 +650,9 @@
     </div>
           
       {{/* ::: ___PREPARATION  */}}
-      <div class="col-md-8 print-col-70-100">
-        <h5 class="text-center">Préparation</h5>
-        <div class=" card card-body">
+    <div class="col-md-8 print-col-70-100">
+      <h4><span class="me-2">{{ partial "inline-svg" (dict "src" "fonticons/preparation" "display" "inline-middle" "fs" 1) }}</span> Préparation</h4>
+        <div class=" card card-body print-nocard">
         {{ if .Params.preparation24h }}
          <div class="card border border-danger mb-4 p-3 " >
            <p class="fs-5 fw-bold text-center print-fs-medium" >A prévoir à l'avance !</p>
@@ -689,7 +706,7 @@
 
     {{/*  ::: _Sidebar Total ingredients  */}}
     <nav class="flex-column col-md-4 col-lg-3 d-md-block bg-light  mt-7 d-print-none " >
-      <div class="sticky-top " style="top: 10%">
+      <div class="sticky-top" style="top: 150px">
     
         <div class="my-5 small">
          <div class="mb-3">
@@ -744,7 +761,9 @@
   
   {{/* ::: Total INGREDIENTS   */}}
   <div class="col  print-col-12 ms-3" >
-
+    <button type="button" onclick="tableToCSV()">
+      download CSV
+  </button>
 
     {{/* :::_FraisByDayRange  */}}
     {{ $fraisByRanges := slice | append  (dict "idR" "LegumesRanges" "titleR" "Fruits Legumes Frais" "iType" "Legumes" "thisRange" "legumesByRanges") (dict "idR" "AnimauxRanges" "titleR" "Viandes/Poissons Frais" "iType" "Animaux" "thisRange" "animauxByRanges") (dict "idR" "FraisRanges" "titleR" "Autres produits Frais" "iType" "Frais" "thisRange" "fraisByRanges") }}
@@ -825,13 +844,9 @@
 
     {{/*  Renommage des iType  */}}
     {{ range sort $IngredientsTypesList "iType" "desc"}}
-      {{ $iTypeName := .iType }}
-      {{ $IngTypeList := (printf "Ing%sList" $iTypeName) }}
-      {{ if eq .iType "Lof" }}
-        {{ $iTypeName = "LOF (Lait Oeuf Farine Huile)" }}
-      {{ else if  eq .iType "Animaux"}}
-        {{ $iTypeName = "Viandes et Poissons" }}
-      {{ end }}
+ 
+    {{ $iTypeName := (partial "components/ingredients-types-rename" (dict "ingType" .iType) .) }}
+    {{ $IngTypeList := (printf "Ing%sList" .iType) }}
 
     {{/*  ::: _ Card des tableau ingredients petit et grand  */}}
     <div 
@@ -841,9 +856,9 @@
       id="{{.iType}}"
       >
       <div class="card-body">
-        <div class="no-print">
-          <span class="fs-4"> {{$iTypeName}} </span>
-          <div class="my-2 float-end">
+        <div class="">
+          <span class="me-2">{{ partial "components/icon-type"  (dict "icon" (.iType | lower)) . }}</span> <span class="fs-4"> {{$iTypeName}} </span>
+          <div class="my-2 float-end no-print">
             <a
               class="btn btn-outline-secondary btn-sm text-muted "
               role="button"
@@ -863,8 +878,8 @@
               :class="{'table-striped': !showAllColIngredients, 'table-bordered' : showAllColIngredients}">
           <thead>
             <tr>
-              <th>Ingredients {{.iType}} </th>
-              <th class="text-center">Recettes</th>
+              <th>Ingredients</th>
+              <th>Recettes</th>
               <th class="text-end">Total</th>
               <th class="printonly" v-show="printAddCol === '1' || printAddCol ===  '2' "></th>
               <th class="printonly" v-show="printAddCol === '2' "></th>
@@ -887,12 +902,12 @@
               
               <tr v-if="item.qTotalX"  :class="{'table-secondary': showAllColIngredients}">
                 <td>[[item.ingredient]]</td>
-                <td class="small">[[item.totalAssiettes]] couverts - [[item.totalRecettes]] plats</td>
+                <td class="small">[[item.totalAssiettes]] couverts - [[item.totalRecettes]] recettes</td>
               
                 <td class="text-end">
                   <template v-for="(quantite, index) in item.qTotalX" >
                     <span v-if="quantite.unit !== ''"> [[round2Decimals(quantite.qTotal)]] [[quantite.unit]] </span>
-                    <span v-else class="small">... [[item.totalRecettes]] plats </span>
+                    <span v-else class="small">... [[item.totalRecettes]] recettes </span>
                     <span v-if="index !== item.qTotalX.length - 1"> + </span>
                   </template>
                 </td>
@@ -917,6 +932,68 @@
 </div> 
 
 {{/*  Import de flatpiker, utilisé seulement sur cette page  */}}
+<script type="text/javascript">
+  function tableToCSV() {
+
+      // Variable to store the final csv data
+      let csv_data = [];
+
+      // Get each row data
+      let rows = document.getElementsByTagName('tr');
+      for (let i = 0; i < rows.length; i++) {
+
+          // Get each column data
+          let cols = rows[i].querySelectorAll('td,th');
+
+          // Stores each csv row data
+          let csvrow = [];
+          for (let j = 0; j < cols.length; j++) {
+
+              // Get the text data of each cell
+              // of a row and push it to csvrow
+              csvrow.push(cols[j].innerHTML);
+          }
+
+          // Combine each column value with comma
+          csv_data.push(csvrow.join(","));
+      }
+
+      // Combine each row data with new line character
+      csv_data = csv_data.join('\n');
+
+      // Call this function to download csv file  
+      downloadCSVFile(csv_data);
+
+  }
+
+  function downloadCSVFile(csv_data) {
+
+      // Create CSV file object and feed
+      // our csv_data into it
+      CSVFile = new Blob([csv_data], {
+          type: "text/csv"
+      });
+
+      // Create to temporary link to initiate
+      // download process
+      let temp_link = document.createElement('a');
+
+      // Download csv file
+      temp_link.download = "GfG.csv";
+      let url = window.URL.createObjectURL(CSVFile);
+      temp_link.href = url;
+
+      // This link should not be displayed
+      temp_link.style.display = "none";
+      document.body.appendChild(temp_link);
+
+      // Automatically click the link to
+      // trigger download
+      temp_link.click();
+      document.body.removeChild(temp_link);
+  }
+</script>
+
 
 <script nonce="6GwL6l4yhLQddbSv2ftKfX9sTqEkpYcmwyUPm5LEdgqF6VP27IUA5SLae8ScqZ171xC7gGVVZAOuYPJnsiUAzPadx4yFkdQ7GNHa" type="module">
   flatpickr.localize(flatpickr.l10ns.fr);

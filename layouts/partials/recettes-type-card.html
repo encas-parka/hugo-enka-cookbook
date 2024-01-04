@@ -20,13 +20,13 @@ partial "recettes-type-card" . }} {{ end -}} {{ end -}} (Si "recette" ne fait pa
 
     </aside>
     <div class="muted fw-light small text-decoration-none text-center mt-3 ">Dernieres recettes publiées :</div>
-    <div class="card-body">
+    <div class="card-body mb-4">
       <a href="{{.Permalink}}" class="stretched-link"></a>
       {{ range first 5 .RegularPages }}
       <div class="card card-recette z-index-2">
         <a href="{{.Permalink}}" class="stretched-link"></a>
         <div>
-          <div class="fw-bold">{{.Title}}</div>
+          <div class="fw-bold">{{ partial "components/icon-recette" . }} {{.Title}}</div>
           {{/*  {{if .Params.regime}} {{ range .Params.regime }}
           <span class="fs-xx-sm badge bg-grey"> {{.}}  </span>
           {{ end }} {{end}}  */}}

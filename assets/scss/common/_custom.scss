@@ -1,3 +1,6 @@
+a:hover {
+  text-decoration: none;
+}
 .scroll-to-top {
   position: fixed;
   right: 1rem;
@@ -215,6 +218,10 @@
   padding: 0 1rem;
 }
 
+.topnav2{
+  top: 50px;
+  z-index: 1029;
+}
 
 // Sidefilter pour la liste des ingredient
 .sidefilter {
@@ -232,7 +239,7 @@
 }
 
 .z-9 {
-  z-index: 9;
+  z-index: 9 !important;
 }
 
 @media screen  and (max-width: 960px) {
@@ -243,3 +250,23 @@
   }
 }
 
+.multi-column-dropdown li a {
+	display: block;
+	clear: both;
+	white-space: normal;
+}
+.multi-column-dropdown li a:hover {
+	text-decoration: none;
+}
+
+.multi-column-dropdown {
+	list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.dropdown-menu.columns-2 {
+	min-width: 50vw;
+}
+.dropdown-menu.columns-3 {
+	min-width: 80vw;
+}

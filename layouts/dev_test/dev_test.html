@@ -5,7 +5,7 @@
 
 {{ $alergene := slice }}
 {{ $sanslactose := slice }}
-{{ $sansglutten := slice }}
+{{ $sansgluten := slice }}
 {{ $vegan := slice }}
 {{$warn := slice}}
 {{ range $.Site.Data.ingredients }}
@@ -18,8 +18,8 @@
         {{ if eq .sans_lactose false }}
           {{ $sanslactose = $sanslactose | append $ingredient }}  
         {{ end }}        
-        {{ if eq .sans_glutten false }}
-          {{ $sansglutten = $sansglutten | append $ingredient }}  
+        {{ if eq .sans_gluten false }}
+          {{ $sansgluten = $sansgluten | append $ingredient }}  
         {{ end }}        
         {{ if eq .vegan false }}
           {{ $vegan = $vegan | append $ingredient }}  
@@ -35,7 +35,7 @@
 
 <hr>
 
-  {{ $warn = $warn | append (slice (dict "alergenes" $alergene ) (dict "sans_lactose" $sanslactose) (dict "sans_gutten" $sansglutten) (dict "not_vegan" $vegan) ) }}  
+  {{ $warn = $warn | append (slice (dict "alergenes" $alergene ) (dict "sans_lactose" $sanslactose) (dict "sans_gutten" $sansgluten) (dict "not_vegan" $vegan) ) }}  
 
   <h4>range $warn range .alergene .,l</h4>
   {{ range  $warn }}
@@ -81,7 +81,7 @@
 
 {{ $alergene := slice }}
 {{ $sanslactose := slice }}
-{{ $sansglutten := slice }}
+{{ $sansgluten := slice }}
 {{ $vegan := slice }}
 
 {{ range site.Data.ingredients }}
@@ -98,9 +98,9 @@
           {{ $sanslactose = $sanslactose| append $ingredient }}  
         {{ end }}        
       {{ end }}
-      {{ with .sans_glutten }}
+      {{ with .sans_gluten }}
         {{ if eq . false }}
-          {{ $sansglutten = $sansglutten| append $ingredient }}  
+          {{ $sansgluten = $sansgluten| append $ingredient }}  
         {{ end }}        
       {{ end }}
       {{ with .vegan }}
@@ -112,7 +112,7 @@
   {{ end }}
 {{ end }}
 
-{{ $result := dict "alergenes" $alergene "sans-lactose" $sanslactose "sans-gutten" $sansglutten "not_vegan" $vegan| jsonify }}
+{{ $result := dict "alergenes" $alergene "sans-lactose" $sanslactose "sans-gutten" $sansgluten "not_vegan" $vegan| jsonify }}
 {{ printf "%s" $result | safeHTML }}
 
 </div>
@@ -473,15 +473,15 @@
       </div>
       <div class="row card mb-5">
         <span class="alert-info small">Liste les pages contenant les
-          paramettres "vegan" et "sans-glutten" dans le
+          paramettres "vegan" et "sans-gluten" dans le
           .params "regime"
           (possibilité d'utilisé qu'un seul tag; a utiliser lorsque les
           paramettre sont contenu dans un array ?)</span>
         <code>
-          $t := slice "vegan" "sans-glutten" <br>
+          $t := slice "vegan" "sans-gluten" <br>
           range where .Site.Pages ".Params.regime" "intersect" $t
         </code>
-        {{ $t := slice "vegan" "sans-glutten" "s" }}
+        {{ $t := slice "vegan" "sans-gluten" "s" }}
         {{ range where .Site.Pages ".Params.regime" "intersect" $t }}
         <div>
           <a href="{{ .Permalink }}">{{ .Title }}</a> - <span class="small">{{.Params.regime}}</span>

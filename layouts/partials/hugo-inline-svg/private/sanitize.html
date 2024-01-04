@@ -47,8 +47,8 @@
     {{ if ne (printf "%T" .) "string" }}
       {{ partial "hugo-inline-svg/private/input-error" (dict "ctx" $ "param" "display" "value" . "valid" "boolean (true/false)") }}
     {{ else }}
-      {{ if and (ne . "block") (ne . "inline") }}
-        {{ partial "hugo-inline-svg/private/input-error" (dict "ctx" $ "param" "display" "value" . "valid" "'block' or 'inline'") }}
+      {{ if and (ne . "block") (ne . "inline") (ne . "inline-middle") }}
+        {{ partial "hugo-inline-svg/private/input-error" (dict "ctx" $ "param" "display" "value" . "valid" "'block' or 'inline' or 'inline-middle'") }}
       {{ end }}
     {{ end }}
   {{ end }}

@@ -55,6 +55,9 @@
     {{ $class = $class | append "d-block" }}
   {{ else if eq .display "inline" }}
     {{ $class = $class | append "d-inline-block" }}
+  {{/*  TEST  */}}
+  {{ else if eq .display "inline-middle" }}
+    {{ $class = $class | append "d-inline-block" }}
   {{ end }}
 
   {{ $class = printf `class="%s"` (delimit $class " ") }}

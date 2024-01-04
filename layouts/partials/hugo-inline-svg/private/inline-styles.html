@@ -15,6 +15,17 @@
       "height: 0.7em;" 
       "width: 0.7em;"
       "vertical-align: baseline;"
+      "margin-right: 0.1em;"
+      "margin-left: 0.1em;"
+  
+      ) }}
+  {{/*  TEST  */}}
+  {{ else if eq .display "inline-middle" }}
+    {{ $inline = $inline | append (slice 
+      "display: inline-block;" 
+      "height: 1em;" 
+      "width: 1em;"
+      "vertical-align: middle ;"
   
       ) }}
   {{ end }}

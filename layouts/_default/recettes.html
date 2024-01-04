@@ -60,9 +60,9 @@
 {{ end }}
 
 
-<h1>{{.Title}}</h1>
+<h1>{{ partial "components/icon-recette" . }} {{.Title}}</h1>
 
-<div class="row ">
+<div class="row">
       <div class="text-muted fs-6 no-print"> publiée le {{ dateFormat "02 January 2006" (.Params.publishDate)  }}</div>
       <div class="col-md-6 ">
       {{- if .Params.auteur -}}
@@ -82,7 +82,7 @@
         {{- if .Params.materiel -}}
           <span class="fw-bold">Materiel: </span>
           {{- range .Params.materiel -}}
-            <span class="badge bg-grey">{{ . }}</span>
+            <span class="badge bg-grey me-1">{{ . }}</span>
           {{- end -}}
         {{- end -}}
       </div>
@@ -162,7 +162,7 @@
 
 <div class="row">
   <div class="col-md-4 print-col-30-100">
-    <h4>Ingredients </h4>
+    <h4><span class="me-2">{{ partial "inline-svg" (dict "src" "fonticons/ingredients" "display" "inline-middle" "fs" 2) }}</span> Ingredients </h4>
 
       {{/*  <div class="card my-4 p-2 shadow">
         <span class="small">{{ partial "inline-svg" (dict "src" "fonticons/exclamation-triangle" "display" "inline" "rem" 1) }} → Allergènes </span>
@@ -171,10 +171,10 @@
       {{- range $key, $value := .Params.ingredients  -}}
         {{- with . -}}
         <div class="card my-2 p-2 " outlined>
-              <span class="fw-bold mb-1">{{ $key | strings.FirstUpper }} </span>
+              <span class="fw-bold mb-2">{{ partial "components/icon-type"  (dict "icon" $key) }} {{ partial "components/ingredients-types-rename" (dict "ingType" ($key  | strings.FirstUpper )) .}} </span>
               {{- range $index, $element := . -}} 
                 <div class="small ps-2">
-               {{ partial "components/ingredients" (dict "title" .title "quantite" .quantite "unit" .unit "alergene" $allergenesList  ) }}
+               • {{ partial "components/ingredients" (dict "title" .title "quantite" .quantite "unit" .unit "alergene" $allergenesList  ) }}
               </div>
               {{end}}
         </div>
@@ -185,9 +185,8 @@
 
 {{/* ::: PREPARATION  */}}
     <div class="col-md-8 print-col-70-100">
-      <h4>Préparation</h4>
-      <div class="card shadow-sm my-4 avoid-break-inside">
-        <div class="card-body">
+      <h4><span class="me-2">{{ partial "inline-svg" (dict "src" "fonticons/preparation" "display" "inline-middle" "fs" 1) }}</span> Préparation</h4>
+      <div class="avoid-break-inside">
           <div class="m-auto">
             {{- if .Params.preparation24h -}}
             <div class="border border-danger mb-4">
@@ -199,7 +198,6 @@
             {{- end -}}
             {{.Params.preparation | markdownify}}
           </div>
-        </div>
       </div>
       
     {{- if .Params.astuces -}}
@@ -265,8 +263,6 @@
   </div>
 </div>
 
-
-</div>
 
 {{/*  :::Script : giscus + quantite  */}}
 {{/*  {{ partial "components/giscus-comment" }}  */}}

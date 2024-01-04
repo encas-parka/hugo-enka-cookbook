@@ -110,7 +110,8 @@ collections:
         multiple: true
         max: 4
         options_length: 10
-        required: false
+        required: true
+        hint: "Vous pouver en définir plusieurs, mais le premier servira à définir l'icones associer à la recette."
       - label: "auteur"
         name: "auteur"
         widget: "string"

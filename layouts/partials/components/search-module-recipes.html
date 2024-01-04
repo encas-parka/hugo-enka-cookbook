@@ -1,3 +1,8 @@
+{{/* DOCUMENTATION
+  Module de recherche des recettes alpinejs. Utilisé dans la home-page et dans le header (navbar)
+  Lié au script mis en partial component/js_search-modules, importé par partial/header/header.html (bug depuis footer-script ou header-script) 
+*/}}
+
 <div x-data="searchRecipes">
   <div>
     <input
@@ -62,69 +67,3 @@
     </template>
     </div>
 </div>
-{{/*  
- */}}
-
-<script>
-{{/*  Auto focus on searchRecipesInput input (for modal searchRecipesInput module)  */}}
-  var searchRecipesModal = document.getElementById('search-recipes-modal')
-  var searchRecipesModalInput = document.getElementById('qsearch-recipes')
-
-  searchRecipesModal.addEventListener('shown.bs.modal', function () {
-    searchRecipesModalInput.focus()
-  })
-    searchRecipesModal.addEventListener('shown.bs.modal', function () {
-    searchRecipesModalInput.focus()
-  });
-
-
-  document.addEventListener('alpine:init', () => {
-    Alpine.data('searchRecipes', () => ({
-    isOpen: false,
-    searchRecipesInput: "",
-
-    getRecipes() {
-      if(this.searchRecipesInput.length > 2) {
-        const filterRecipes = this.recipesData.filter((recipe) => {
-        return this.searchRecipesInput.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').split(' ').every(
-        v => recipe.title.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(v) ||
-        recipe.auteur.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(v) ||
-        recipe.specialite.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(v))
-        })
-      
-        if(filterRecipes.length > 0 ) {
-          return filterRecipes
-        }
-      }
-    },
-
-      closeSearch() {
-        this.searchRecipesInput = "";
-        this.isOpen = false;
-      },
-
-
-    recipesData: [
-
-      {{- range(where .Site.RegularPages "Section" "recettes" ) -}}
-
-        {
-          title: "{{ .Title }}",
-          url: "{{ .RelPermalink }}",
-          type: "{{ .Params.type }}",
-          auteur: "{{- .Params.auteur -}}",
-          specialite: "{{- .Params.spécialité -}}",
-          saison: [{{- range .Params.saison -}} "{{ . }}", {{- end -}} ],
-          categories: [ {{- range .Params.categories -}} "{{ . }}", {{- end -}}],
-          regimes: [ {{- if .Params.regime -}} {{- range sort .Params.regime -}} "{{ . }}", {{- end -}} {{- end -}} ],
-          temperature: "{{ .Params.temperature }}",
-          cuisson: "{{ .Params.cuisson }}",
-          materiel: [{{- range .Params.materiel -}}  "{{ . }}", {{- end -}}]
-        },
-
-      {{- end -}}
-      ]
-
-    }))
-  })
-</script>

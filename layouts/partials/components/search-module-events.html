@@ -1,3 +1,8 @@
+{{/* DOCUMENTATION
+  Module de recherche des recettes alpinejs. Utilisé dans la home-page et dans le header (navbar)
+  Lié au script mis en partial component/js_search-modules, importé par partial/header/header.html (bug depuis footer-script ou header-script) 
+*/}}
+
 <div x-data="searchEvents">
     <input
         type="text"
@@ -21,60 +26,4 @@
      </a>
     </template>
 </div>
-{{/*  
- */}}
 
-<script>
-{{/*  Auto focus on searchEventsInput input (for modal searchEventsInput module)  */}}
-  var searchEventsModal = document.getElementById('search-events-modal')
-  var searchEventsModalInput = document.getElementById('qsearch-events')
-
-  searchEventsModal.addEventListener('shown.bs.modal', function () {
-    searchEventsModalInput.focus()
-  })
-    searchEventsModal.addEventListener('shown.bs.modal', function () {
-    searchEventsModalInput.focus()
-  });
-
-
-  document.addEventListener('alpine:init', () => {
-    Alpine.data('searchEvents', () => ({
-    isOpen: false,
-    searchEventsInput: "",
-
-    getEvents() {
-      if(this.searchEventsInput.length >= 4) {
-        const filterEvents = this.eventsData.filter((event) => {
-        return this.searchEventsInput.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').split(' ').every(
-        v => event.title.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').includes(v) )
-        })
-      
-        if(filterEvents.length > 0 ) {
-          return filterEvents
-        }
-      }
-    },
-
-      closeSearch() {
-        this.searchEventsInput = "";
-        this.isOpen = false;
-      },
-
-
-    eventsData: [
-
-      {{- range(where .Site.RegularPages "Section" "evenements" ) -}}
-
-        {
-          title: "{{ .Title }}",
-          url: "{{ .RelPermalink }}",
-          NbRepas: "{{ len .Params.Repas }} repas",
-          NbRecettes: "- {{ $nb := 0}} {{- range .Params.Repas -}} {{- range .recettes_du_repas -}} {{ $nb = add $nb 1 }} {{end}} {{end}} {{ $nb }} recettes",
-        },
-
-      {{- end -}}
-      ]
-
-    }))
-  })
-</script>

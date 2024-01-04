@@ -50,3 +50,7 @@ seo:
   - favicons:
     icon: "favicon.png"
     svgIcon: "favicon.svg"
+
+
+inlineSvg:
+  inlineCSS: true
