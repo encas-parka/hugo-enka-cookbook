@@ -17,7 +17,7 @@
     "http-server": "^14.1.1",
     "hugo-installer": "^4.0.1",
     "netlify-identity-widget": "^1.9.2",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.33",
     "postcss-cli": "^10.1.0",
     "purgecss-whitelister": "^2.4.0",
     "quicklink": "^2.3.0",
