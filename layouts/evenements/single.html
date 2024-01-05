@@ -265,25 +265,25 @@
            </div>
           
 
-        <div v-show="toPrint.ingredients" class="card card-body">
-        
-
-          <div class="form-check form-switch mb-3">
+        <div v-show="toPrint.ingredients" class="ms-4">
+          <div class="form-check form-switch my-2">
             <input class="form-check-input" type="checkbox" v-model="showAllColIngredients" id="checkRecipeDetail">
             <label for="checkRecipeDetail">Afficher les recettes pour chaque ingrédient</label>
           </div>
-              <span>Ajouter des colonnes aux tableaux : </span>
-              <select v-model="printAddCol" class="form-select">
-              <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-              </select>
+          <span>• Ajouter des colonnes aux tableaux : </span>
+          <select v-model="printAddCol" class="form-select">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
         </div>
-        </div></div>
+      
+        </div>
+      </div>
  
       <hr>
       <div class="text-end">
-        <a class="btn btn-primary btn-sm"  @click="print" role="button" data-bs-dismiss="modal">Imprimer !</a>
+        <a class="btn btn-primary"  @click="print" role="button" data-bs-dismiss="modal">Imprimer !</a>
       </div>
       </div>
     </div>
@@ -760,10 +760,18 @@
       </nav>
   
   {{/* ::: Total INGREDIENTS   */}}
-  <div class="col  print-col-12 ms-3" >
-    <button type="button" onclick="tableToCSV()">
-      download CSV
-  </button>
+  <div class="col  print-col-12 ms-3">
+
+    <div class="btn-group no-print" role="group" aria-label="Exporter / Copier">
+      <button class="btn btn-outline-secondary" disabled>Copier les tableaux dans le presse-papier : </button>
+      <button type="button" class="btn btn-outline-primary" @click="copyToClipboard('md')">Markdown</button>
+      <button type="button" class="btn btn-outline-primary" @click="copyToClipboard('text')">Texte simple</button>
+      <button type="button" class="btn btn-outline-primary" @click="copyToClipboard('html')">html</button>
+      <button type="button" class="btn btn-outline-primary" @click="copyToClipboard('csv')">csv</button>
+      {{/*  TODO : modal explicatif  */}}
+    </div>
+
+
 
     {{/* :::_FraisByDayRange  */}}
     {{ $fraisByRanges := slice | append  (dict "idR" "LegumesRanges" "titleR" "Fruits Legumes Frais" "iType" "Legumes" "thisRange" "legumesByRanges") (dict "idR" "AnimauxRanges" "titleR" "Viandes/Poissons Frais" "iType" "Animaux" "thisRange" "animauxByRanges") (dict "idR" "FraisRanges" "titleR" "Autres produits Frais" "iType" "Frais" "thisRange" "fraisByRanges") }}
@@ -783,7 +791,7 @@
         >
         <div class="card-body">
           <div class="">
-            <span class="fs-5"> {{.titleR}} du [[ range[0] ]] au [[range[range.length - 1] ]] </span>
+            <span class="fs-5 toCopy"> {{.titleR}} du [[ range[0] ]] au [[range[range.length - 1] ]] </span>
             <div class="my-2 float-end">
               <a
                 class="btn btn-outline-secondary btn-sm text-muted "
@@ -793,7 +801,7 @@
             </div>
           </div>
 
-          <table id="tableFrais" class="table table-responsive"  :class="{'table-striped': !showAllColIngredients, 'table-bordered' : showAllColIngredients}">
+          <table id="tableFrais" class="table table-responsive toCopy"  :class="{'table-striped': !showAllColIngredients, 'table-bordered' : showAllColIngredients}">
 
             <thead>
               <tr>
@@ -821,11 +829,11 @@
                 </tr>
 
                 <tr v-if="item.qTotal" :class="{'table-secondary': showAllColIngredients}">
-                  <td>[[item.ingredient]]</td>
+                  <td class="toCopyTd">[[item.ingredient]]</td>
                   <td class="small" >[[item.totalAssiettes]] couverts</td>
-                <td class="text-end">
-                  <span>[[item.qTotal]] [[item.unitTotal]]</span>
-                </td>
+                  <td class="text-end toCopyTd">
+                  <span >[[item.qTotal]] [[item.unitTotal]]</span>
+                  </td>
                 <td v-show="printAddCol === '1' || printAddCol ===  '2' " class="printonly print-td-15" ></td>
                 <td v-show=" printAddCol ===  '2' || printAddCol ===  '3' " class="printonly print-td-15" ></td>
               </tr>
@@ -843,89 +851,85 @@
 
 
     {{/*  Renommage des iType  */}}
-    {{ range sort $IngredientsTypesList "iType" "desc"}}
- 
-    {{ $iTypeName := (partial "components/ingredients-types-rename" (dict "ingType" .iType) .) }}
-    {{ $IngTypeList := (printf "Ing%sList" .iType) }}
-
-    {{/*  ::: _ Card des tableau ingredients petit et grand  */}}
-    <div 
-      v-if="totalQuantitesDP.{{$IngTypeList}} && Object.keys(totalQuantitesDP.{{$IngTypeList}}).length > 0"
-      class="card my-2 mb-lg-6 avoid-break-inside  mb-3 print-nocard"
-      :class="{'no-print':!toPrint.{{.iType}} }"
-      id="{{.iType}}"
-      >
-      <div class="card-body">
-        <div class="">
-          <span class="me-2">{{ partial "components/icon-type"  (dict "icon" (.iType | lower)) . }}</span> <span class="fs-4"> {{$iTypeName}} </span>
-          <div class="my-2 float-end no-print">
-            <a
-              class="btn btn-outline-secondary btn-sm text-muted "
-              role="button"
-              @click="printThis('{{.iType}}', 'ingredients')"
-              >{{ partial "inline-svg" (dict "src" "fonticons/printer"  "fs" 3) }}</a>
+    <div id="tableIng">
+      {{ range sort $IngredientsTypesList "iType" "desc"}}
+      {{ $iTypeName := (partial "components/ingredients-types-rename" (dict "ingType" .iType) .) }}
+      {{ $IngTypeList := (printf "Ing%sList" .iType) }}
+      {{/*  ::: _ Card des tableau ingredients petit et grand  */}}
+      <div
+        v-if="totalQuantitesDP.{{$IngTypeList}} && Object.keys(totalQuantitesDP.{{$IngTypeList}}).length > 0"
+        class="card my-2 mb-lg-6 avoid-break-inside  mb-3 print-nocard"
+        :class="{'no-print':!toPrint.{{.iType}} }"
+        id="{{.iType}}"
+        >
+        <div class="card-body">
+          <div class="">
+            <span class="me-2">{{ partial "components/icon-type"  (dict "icon" (.iType | lower)) . }}</span> <span class="fs-4 toCopy"> {{$iTypeName}} </span>
+            <div class="my-2 float-end no-print">
+              <a
+                class="btn btn-outline-secondary btn-sm text-muted "
+                role="button"
+                @click="printThis('{{.iType}}', 'ingredients')"
+                >{{ partial "inline-svg" (dict "src" "fonticons/printer"  "fs" 3) }}</a>
+            </div>
           </div>
-        </div>
-        <div v-if="startDate !== startDateSelected || endDate !== endDateSelected" class="fs-6 text-center">
-            Du [[new Date (startDateSelected).toLocaleDateString("fr-FR", {weekday: 'long', month: 'long', day:
-            'numeric'})]] au [[new Date (endDateSelected).toLocaleDateString("fr-FR", {weekday: 'long', month: 'long',
-            day: 'numeric'})]]
-        </div>
-  
-  
-        {{/* ::: __Table ingrédients   */}}
-        <table class="table table-responsive"
-              :class="{'table-striped': !showAllColIngredients, 'table-bordered' : showAllColIngredients}">
-          <thead>
-            <tr>
-              <th>Ingredients</th>
-              <th>Recettes</th>
-              <th class="text-end">Total</th>
-              <th class="printonly" v-show="printAddCol === '1' || printAddCol ===  '2' "></th>
-              <th class="printonly" v-show="printAddCol === '2' "></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <template v-for="(item, ingredient) in totalQuantitesDP.{{$IngTypeList}}">
-              
-              <tr v-if="showAllColIngredients && !item.qTotalX"
-                
+          <div v-if="startDate !== startDateSelected || endDate !== endDateSelected" class="fs-6 text-center toCopyDate">
+              Du [[new Date (startDateSelected).toLocaleDateString("fr-FR", {weekday: 'long', month: 'long', day:
+              'numeric'})]] au [[new Date (endDateSelected).toLocaleDateString("fr-FR", {weekday: 'long', month: 'long',
+              day: 'numeric'})]]
+          </div>
+          {{/* ::: __Table ingrédients   */}}
+          <table class="table table-responsive toCopy"
+                :class="{'table-striped': !showAllColIngredients, 'table-bordered' : showAllColIngredients}"
+                id="table-{{.iType}}"
                 >
-                <td :class="{'small text-muted': !item.qTotalX}">[[item.ingredient]]</td>
-                <td v-if="item.recette " class="small">
-                  <span class="fw-bold">[[item.recette]]</span> le [[new Date (item.dateService).toISOString().substr(0, 10)]] /
-                  [[item.horaire]] <br> pour [[item.assiettes]] couverts
-                  <span class="fw-bold float-end" v-if="item.quantite && item.unit">[[round2Decimals(item.quantite)]] [[item.unit]]</span>
-                </td>
+            <thead>
+              <tr>
+                <th>Ingredients</th>
+                <th>Recettes</th>
+                <th class="text-end">Total</th>
+                <th class="printonly" v-show="printAddCol === '1' || printAddCol ===  '2' "></th>
+                <th class="printonly" v-show="printAddCol === '2' "></th>
               </tr>
-              
-              <tr v-if="item.qTotalX"  :class="{'table-secondary': showAllColIngredients}">
-                <td>[[item.ingredient]]</td>
-                <td class="small">[[item.totalAssiettes]] couverts - [[item.totalRecettes]] recettes</td>
-              
-                <td class="text-end">
-                  <template v-for="(quantite, index) in item.qTotalX" >
-                    <span v-if="quantite.unit !== ''"> [[round2Decimals(quantite.qTotal)]] [[quantite.unit]] </span>
-                    <span v-else class="small">... [[item.totalRecettes]] recettes </span>
-                    <span v-if="index !== item.qTotalX.length - 1"> + </span>
-                  </template>
-                </td>
-              
-                <td v-show="printAddCol === '1' || printAddCol ===  '2' " class="printonly print-td-15" ></td>
-                <td v-show=" printAddCol ===  '2' || printAddCol ===  '3' " class="printonly print-td-15" ></td>
-              </tr>
-
-              </template>
-          </tbody>
-        </table>
-             
-
+            </thead>
+            <tbody>
+              <template v-for="(item, ingredient) in totalQuantitesDP.{{$IngTypeList}}">
+      
+                <tr v-if="showAllColIngredients && !item.qTotalX"
+                
+                  >
+                  <td :class="{'small text-muted': !item.qTotalX}"
+                  >[[item.ingredient]]</td>
+                  <td v-if="item.recette " class="small">
+                    <span class="fw-bold">[[item.recette]]</span> le [[new Date (item.dateService).toISOString().substr(0, 10)]] /
+                    [[item.horaire]] <br> pour [[item.assiettes]] couverts
+                    <span class="fw-bold float-end" v-if="item.quantite && item.unit">[[round2Decimals(item.quantite)]] [[item.unit]]</span>
+                  </td>
+                </tr>
+      
+                <tr v-if="item.qTotalX"  :class="{'table-secondary': showAllColIngredients}">
+                  <td class="toCopyTd">[[item.ingredient]]</td>
+                  <td class="small">[[item.totalAssiettes]] couverts - [[item.totalRecettes]] recettes</td>
+      
+                  <td class="text-end toCopyTd">
+                    <template v-for="(quantite, index) in item.qTotalX" >
+                      <span v-if="quantite.unit !== ''"> [[round2Decimals(quantite.qTotal)]] [[quantite.unit]] </span>
+                      <span v-else class="small">... [[item.totalRecettes]] recettes </span>
+                      <span v-if="index !== item.qTotalX.length - 1"> + </span>
+                    </template>
+                  </td>
+      
+                  <td v-show="printAddCol === '1' || printAddCol ===  '2' " class="printonly print-td-15" ></td>
+                  <td v-show=" printAddCol ===  '2' || printAddCol ===  '3' " class="printonly print-td-15" ></td>
+                </tr>
+                </template>
+            </tbody>
+          </table>
+      
+        </div>
       </div>
+      {{ end }}
     </div>
-
-    {{ end }}
- 
       </div>
     </div>
 </div>
@@ -966,6 +970,109 @@
 
   }
 
+  function copyTable(el) {
+  var body = document.body,
+    range,
+    sel;
+  if (document.createRange && window.getSelection) {
+    range = document.createRange();
+    sel = window.getSelection();
+    sel.removeAllRanges();
+    try {
+      range.selectNodeContents(el);
+      sel.addRange(range);
+    } catch (e) {
+      range.selectNode(el);
+      sel.addRange(range);
+    }
+  } else if (body.createTextRange) {
+    range = body.createTextRange();
+    range.moveToElementText(el);
+    range.select();
+  }
+  document.execCommand("Copy");
+}
+
+
+  function copyToClipboard(format)  {
+    const titles = document.querySelectorAll('span.toCopy');
+    const titlesArray = [];
+    if (titles.length === 0) {
+      console.error("Aucun élément avec la classe '.toCopy' n'a été trouvé.");
+      return;
+    }
+    titles.forEach((title, index) => {
+      titlesArray.push(title.textContent);
+      console.log(title.textContent);
+    });
+
+    const dates = document.querySelector('div.toCopyDate');
+    if (!dates) {
+      console.error("Aucun élément avec la classe 'toCopyDate' n'a été trouvé.");
+    }
+    let date = ""
+    if (dates) {
+      date = dates.textContent
+    }
+    
+    const tables = document.querySelectorAll('table.toCopy');
+    let data = '';
+  
+    tables.forEach((table, index) => {
+      const dataElements = table.querySelectorAll('td.toCopyTd');
+      const td1Array = [];
+      const td3Array = [];
+  
+      Array.from(dataElements).forEach((element, index) => {
+        if (index % 2 === 0) {
+          const td1 = element.textContent;
+          const td3 =  dataElements[index + 1].textContent; // Récupère l'élément suivant dans le tableau dataElements
+          td1Array.push(td1);
+          td3Array.push(td3);
+        }
+      });
+      let title = titlesArray[index];
+
+      if (date && !/\d/.test(title) ) {
+        // La variable date existe et ne contient pas de chiffres
+        title += ` - ${date}`
+      }
+
+      if (format === 'md') {
+        data += `## ${title}\n\n| Ingredients | Total | Ou | Acheté |\n| --- | --- | --- | --- |\n`;
+        for (let i = 0; i < td1Array.length; i++) {
+          data += `| ${td1Array[i]} | ${td3Array[i]} |  |  |\n`;
+        }
+      } else if (format === 'csv') {
+        data += `${title}\n"Ingredients","Total","Ou","Acheté"\n`;
+        for (let i = 0; i < td1Array.length; i++) {
+          data += `"${td1Array[i]}","${td3Array[i]}",,\n`;
+        }
+      } else if (format === 'text') {
+        data += `## ${title}\n`;
+        for (let i = 0; i < td1Array.length; i++) {
+          data += `${td1Array[i]} : ${td3Array[i]} → \n`;
+        } 
+      }  else if (format === 'html') {
+        data += `<h2>${title}</h2>\n<table style="border-collapse: collapse; width: 100%;">\n<tr><th style="border: 1px solid black; width: 250px;">Ingredients</th><th style="border: 1px solid black; width: 250px;">Total</th><th style="border: 1px solid black; width: 100px;">Ou</th><th style="border: 1px solid black; width: 100px;">Acheté</th></tr>\n`;
+        for (let i = 0; i < td1Array.length; i++) {
+          data += `<tr><td style="border: 1px solid black; width: 250px;"><strong>${td1Array[i]}</strong></td><td style="border: 1px solid black; width: 250px; text-align: center;">${td3Array[i]}</td><td style="border: 1px solid black; width: 100px;"></td><td style="border: 1px solid black; width: 100px;"></td></tr>\n`;
+        }
+        data += '</table>\n';
+      }
+      
+      if (index < tables.length - 1) {
+        data += '\n';
+      }
+    });
+  const blob = new Blob([data], {type: 'text/plain'});
+  const clipboardItem = new ClipboardItem({'text/plain': blob});
+
+  navigator.clipboard.write([clipboardItem]);
+  }
+  
+ 
+ 
   function downloadCSVFile(csv_data) {
 
       // Create CSV file object and feed
