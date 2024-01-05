@@ -71,7 +71,7 @@ collections:
     create: true
 
     fields:
-      - { label: "Intitulé", name: "title", widget: "string", hint: "Attention à ne pas utiliser un nom de recette déjà existant (si c'était le cas, la PAGE N'EXISTERA pas sur le site...). Si vous modifier le titre alors que la recette est déjà utilisé dans un évenement, la page de l'evenement ne FONCTIONNERA PLUS correctement. Il vous faudra éditer la page de l'évenement pour indiquer le nouveau titre de la recette.  " }
+      - { label: "Intitulé", name: "title", widget: "string", hint: "Attention à ne pas utiliser un nom de recette déjà existant (sinon, l'une des 2 pages ne sera PAS ACCESSIBLE pas sur le site...). ET si vous modifiez le titre alors que la recette est déjà utilisé dans un évenement, la page de l'événement ne FONCTIONNERA PLUS correctement. Il vous faudra éditer la page de l'événement pour indiquer le nouveau titre de la recette.  " }
       # - {label: 'Brouillon', name: 'draft', widget: 'boolean', default: false}
       - { name: "slug",  widget: "hidden", default: }
       - {
@@ -110,7 +110,7 @@ collections:
         max: 4
         options_length: 10
         required: true
-        hint: "Vous pouver en définir plusieurs, mais le premier servira à définir l'icones associer à la recette."
+        hint: "Vous pouver en définir plusieurs, mais la permière servira à définir l'icone associé à la recette."
       - label: "auteur"
         name: "auteur"
         widget: "string"
@@ -159,7 +159,7 @@ collections:
         value_type: "int"
       - label: "Testé ?"
         name: "check"
-        hint: "Indiquez si vous avez testé la recette pour le nombre de couverts indiqués"
+        hint: "Indiquez si vous avez testé la recette pour le nombre de couverts indiqués. C'est mieux si c'est le cas :)"
         widget: "select"
         options: ["Oui", "Non"]
       - label: "Proportions fixes ?"

@@ -48,7 +48,7 @@
   },
   "scripts": {
     "build": "exec-bin node_modules/.bin/hugo/hugo --minify",
-    "builddemo": "exec-bin node_modules/.bin/hugo/hugo --environment 'demo' --minify ",
+    "builddemo": "exec-bin node_modules/.bin/hugo/hugo --environment 'demo' --minify --gc",
     "clean": "npm run clean:build && npm run clean:lint && npm run clean:install",
     "clean:build": "shx rm -rf public resources .hugo_build.lock",
     "clean:install": "shx rm -rf node_modules package-lock.json yarn.lock pnpm-lock.yaml",

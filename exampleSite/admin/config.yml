@@ -1,8 +1,8 @@
 backend:
   ## prod →
   name: github
-  open_authoring: true #Permettre un PR sur github sans l'acces aux dépot
-  squash_merges: true  #XXX : Vérifier si ca marche bien : si un article est modifier plusieur avant d'etre mergé/publié, un seul commit avec rebased.
+  # open_authoring: true #Permettre un PR sur github sans l'acces aux dépot
+  # squash_merges: true  #XXX : Vérifier si ca marche bien : si un article est modifier plusieur avant d'etre mergé/publié, un seul commit avec rebased.
 
 # when using the default proxy server port
 # for local cms developpement.
