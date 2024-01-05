@@ -12,6 +12,7 @@
     "alpinejs": "^3.13.3",
     "autoprefixer": "^10.4.16",
     "bootstrap": "^5.3.2",
+    "decap-cms-app": "^3.0.12",
     "exec-bin": "^1.0.0",
     "flatpickr": "^4.6.13",
     "http-server": "^14.1.1",
@@ -59,7 +60,7 @@
     "preinfo": "npm version",
     "postinfo": "exec-bin node_modules/.bin/hugo/hugo version",
     "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo",
-    "upassets": "pnpm update && shx cp -ru node_modules/bootstrap/scss assets/scss/bootstrap && shx cp -ru node_modules/bootstrap/dist/js/bootstrap.bundle.js assets/js/vendor  && shx cp -u node_modules/bootstrap/dist/js/bootstrap.bundle.min.js assets/js/vendor && shx cp -u node_modules/vue/dist/vue.common.dev.js asset/js/vendor  && shx cp -u node_modules/vue/dist/vue.min.js asset/js/vendor && shx cp -u node_modules/flatpickr/dist/flatpick.js assets/flatpickr  && shx cp -u node_modules/flatpickr/dist/flatpick.min.js assets/flatpickr && shx cp -u node_modules/flatpickr/dist/l10n/fr.js assets/flatpickr && shx cp -u node_modules/netlify-identity-widget/build/netlify-identity-widget.js assets/js/vendor && shx cp -u node_modules/alpinejs/dist/cdn.min.js assets/js/vendor "
+    "upassets": "pnpm update && shx cp -ru node_modules/bootstrap/scss assets/scss/bootstrap && shx cp -ru node_modules/bootstrap/dist/js/bootstrap.bundle.js assets/js/vendor  && shx cp -u node_modules/bootstrap/dist/js/bootstrap.bundle.min.js assets/js/vendor && shx cp -u node_modules/vue/dist/vue.common.dev.js asset/js/vendor  && shx cp -u node_modules/vue/dist/vue.min.js asset/js/vendor && shx cp -u node_modules/flatpickr/dist/flatpick.js assets/flatpickr  && shx cp -u node_modules/flatpickr/dist/flatpick.min.js assets/flatpickr && shx cp -u node_modules/flatpickr/dist/l10n/fr.js assets/flatpickr && shx cp -u node_modules/netlify-identity-widget/build/netlify-identity-widget.js assets/js/vendor && shx cp -u node_modules/alpinejs/dist/cdn.min.js assets/js/vendor"
   },
   "version": "0.9.0"
 }
