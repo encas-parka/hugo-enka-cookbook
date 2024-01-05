@@ -35,7 +35,6 @@ editor:
 collections:
   - name: "recettes"
     label: "Recettes"
-    hint: "Attention à ne pas utiliser un nom de recette déjà existant (si c'était le cas, la PAGE N'EXISTERA pas sur le site...). Si vous modifier le titre alors que la recette est déjà utilisé dans un évenement, la page de l'evenement ne FONCTIONNERA PLUS correctement. Il vous faudra éditer la page de l'évenement pour indiquer le nouveau titre de la recette.  "
     label-singular: "Recette"
     folder: "content/recettes/"
     path: "{{type}}/{{slug}}/index"
@@ -72,7 +71,7 @@ collections:
     create: true
 
     fields:
-      - { label: "Intitulé", name: "title", widget: "string" }
+      - { label: "Intitulé", name: "title", widget: "string", hint: "Attention à ne pas utiliser un nom de recette déjà existant (si c'était le cas, la PAGE N'EXISTERA pas sur le site...). Si vous modifier le titre alors que la recette est déjà utilisé dans un évenement, la page de l'evenement ne FONCTIONNERA PLUS correctement. Il vous faudra éditer la page de l'évenement pour indiquer le nouveau titre de la recette.  " }
       # - {label: 'Brouillon', name: 'draft', widget: 'boolean', default: false}
       - { name: "slug",  widget: "hidden", default: }
       - {
@@ -173,7 +172,7 @@ collections:
         name: "checkfor"
         widget: "number"
         value_type: "int"
-        hint: "Si vous avez testé la recette avec les quantités et proportions d'ingrédients indiquées ci-dessous pour un nombre de couverts significativement différent, et que la recette était réussie, indiquez-le ici. S'il vous a fallu modifier les quantités d'ingrédients pour obtenir un résultat satisfaisant, vous pouvez 'dupliquer' cette recette (bouton 'publish' en haut → 'duplicate'), et modifier en conséquence la recette dupliquée. Merci d'indiquer sur les 2 recettes qu'il existe une recette alternative (compléter le champ 'Préparations Alternatives' en bas de cette page). À défaut, vous pouvez indiquer brièvement les modifications à apporter dans le champ 'astuces' en bas de cette page."
+        hint: "Si vous avez testé la recette pour un nombre de couverts significativement différent, et que la recette était réussie, indiquez ce nombre de couverts ici. S'il vous a fallu modifier les quantités d'ingrédients pour obtenir un résultat satisfaisant, vous pouvez 'dupliquer' cette recette (bouton 'publish' en haut → 'duplicate'), et modifier en conséquence la recette dupliquée (et amender le titre). Merci d'indiquer sur l'une des 2 recettes qu'il existe une recette alternative (compléter le champ 'Préparations Alternatives' en bas de cette page). À défaut, vous pouvez indiquer brièvement les modifications à apporter dans le champ 'astuces' en bas de cette page."
         required: false
 
       ################################
