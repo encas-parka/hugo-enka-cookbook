@@ -7,3 +7,12 @@ mounts:
 
   - source: content
     target: content
+
+  - source: data
+    target: data
+
+  - source: static
+    target: static
+
+  - source: assets
+    target: assets
